@@ -979,11 +979,12 @@ function firstquest() {
     }, 2500);
     setTimeout(function() {
             qon().play();
-             }, 7000);
+            setTimeout(function() {
+            qon().play();
+             }, 2000);
+    }, 7000);
 
-    setTimeout(function() {
-            school.play();
-             }, 9000);
+  
     Drop.style.setProperty("display", "none");
     setTimeout(function () {
       // question.style.fontSize = "0";
