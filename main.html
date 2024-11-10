@@ -1063,9 +1063,17 @@ playbtn.onclick = function () {
           frame1.classList.add("animate-frame");
           frame2.classList.add("animate-frame");
           setTimeout(function () {
+            setTimeout(function() {
+    // تنفيذ حدث الضغط على العنصر
+             ReplayMusic.click();
+             }, 1000);
             frame1.classList.remove("animate-frame");
             frame2.classList.remove("animate-frame");
-          }, 3000)
+          }, 2000)
+          setTimeout(function() {
+    // تنفيذ حدث الضغط على العنصر
+             ReplayMusic.click();
+             }, 5000);
         }, 5000)
       }, 1200)
 
@@ -1102,13 +1110,7 @@ playbtn.onclick = function () {
         firstquest();
       }, 100);
     }, 200);
-    setTimeout(() => {
-      school.play()
-      }, 8000);
-
-    setTimeout(() => {
-      qoo1.play()
-      }, 9900);
+  
 
   }, 100);
 };
