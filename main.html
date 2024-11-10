@@ -818,6 +818,7 @@ var qos = document.getElementsByClassName("Qos")[0];
 
 // Questions Audio
 var qoo1 = new Audio("./lib/backschool.mp3");
+var school = new Audio("./lib/backschool.mp3");
 var qoo2 = new Audio("./lib/getting.mp3");
 var qoo3 = new Audio("./lib/flower.mp3");
 var qoo4 = new Audio("./lib/summer2.mp3");
@@ -990,13 +991,18 @@ function firstquest() {
         Drop.style.setProperty("display", "flex");
         Quest1.style.setProperty("top", "47%");
       }, 900);
+
+      // school.play()
       setTimeout(() => {
-        qoo1.play()
+      school.play();
+      setTimeout(() => {
+      school.play();
       }, 3000);
-      setTimeout(() => {
-        qoo1.play()
-      }, 1000);
+      }, 2000);
     }, 6400);
+   
+  
+
     // sayquestion(qoo1, 7600, 1800);
   }, 200);
 }
