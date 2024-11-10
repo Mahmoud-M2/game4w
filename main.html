@@ -977,6 +977,13 @@ function firstquest() {
     setTimeout(() => {
       qoar.play()
     }, 2500);
+    setTimeout(function() {
+            qon().play();
+             }, 7000);
+
+    setTimeout(function() {
+            school.play();
+             }, 9000);
     Drop.style.setProperty("display", "none");
     setTimeout(function () {
       // question.style.fontSize = "0";
@@ -1063,14 +1070,10 @@ playbtn.onclick = function () {
           frame1.classList.add("animate-frame");
           frame2.classList.add("animate-frame");
           setTimeout(function () {
-            qon().play()
-            setTimeout(function () {
-            qoo2.play()
-            
-          }, 4000)
             frame1.classList.remove("animate-frame");
             frame2.classList.remove("animate-frame");
           }, 2000)
+
         }, 5000)
       }, 1200)
 
