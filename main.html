@@ -993,12 +993,12 @@ function firstquest() {
       }, 900);
 
       // school.play()
-      setTimeout(() => {
-      school.play();
-      setTimeout(() => {
-      school.play();
-      }, 3000);
-      }, 2000);
+      // setTimeout(() => {
+      // school.play();
+      // setTimeout(() => {
+      // school.play();
+      // }, 3000);
+      // }, 2000);
     }, 6400);
    
   
@@ -1102,6 +1102,14 @@ playbtn.onclick = function () {
         firstquest();
       }, 100);
     }, 200);
+    setTimeout(() => {
+      school.play()
+      }, 8000);
+
+    setTimeout(() => {
+      qoo1.play()
+      }, 9900);
+
   }, 100);
 };
 
