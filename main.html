@@ -1,0 +1,3334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page 5</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" href="./lib/English easy logo-01.png" type="Easy English">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&family=Cabin+Sketch:wght@400;700&family=Cairo:wght@200..1000&family=El+Messiri:wght@400..700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Finger+Paint&family=Gochi+Hand&family=Honk&family=Jersey+10&family=Jersey+10+Charted&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Kufi+Arabic:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+     <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&family=Cabin+Sketch:wght@400;700&family=Cairo:wght@200..1000&family=El+Messiri:wght@400..700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Finger+Paint&family=Gochi+Hand&family=Honk&family=Jersey+10&family=Jersey+10+Charted&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Kufi+Arabic:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --clr1_back_btn-: #f9a93f;
+    --clr1_Shade_btn-: #c06e03;
+    --clr3_border_btn-: #aa6f22;
+    --clr4_hover_btn-: #c0ffac;    
+    --borderSH-: #ef6f19;
+    --borderHV-: #b85f23;
+    --clr5_btn-: #c7fcb7;
+    --Liner- : linear-gradient(#eea400, #ee0202);
+    --LinerHover- : linear-gradient(#df791e, #ffa758);
+  }
+  * {
+    box-sizing: border-box;
+    font-family: "Sharktoons";
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+  }
+  @font-face {
+    font-family: ""Roboto", serif";
+    /* src: url(Font/Sharkartoon.ttf); */
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(Images/Back.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    overflow: hidden;
+  }
+
+  .frame1,
+    .frame2 {
+      position: fixed;
+      height: 100vh;
+      width: 100vw;
+      transform: translateX(-200%);
+      clip-path: polygon(0 0, 100% 0, 75% 50%, 100% 100%, 0 100%);
+      z-index: 9999;
+      top: 0;
+      left: 0;
+    }
+
+    .animate-frame {
+      animation: frame 1s linear forwards;
+    }
+
+    .frame1 {
+      background-color: #5a54ea;
+      animation-delay: 0.25s;
+    }
+
+    .frame2 {
+      background-color: #eb9e0e;
+      animation-delay: 0.5s;
+    }
+
+    @keyframes frame {
+      0% {
+        transform: translateX(-200%);
+        clip-path: polygon(0 0,
+            100% 0,
+            75% 50%,
+            100% 100%,
+            0 100%);
+        /* Arrow shape */
+      }
+
+      100% {
+        transform: translateX(100%);
+        clip-path: polygon(0 0, 100% 0, 75% 50%, 100% 100%, 0 100%);
+      }
+    }
+
+
+
+  .Game {
+    /* background: linear-gradient(45deg, rgb(0, 0, 0), rgb(0 197 255), rgb(87 87 217));
+            transition: background 1.6s linear; */
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+  #Logo {
+    position: absolute;
+    width: 200px;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    transition: all 1.2s;
+    z-index: 1;
+  }
+  :root {
+    --letterW-: clamp(100px, 20vw, 180px);
+    --letterH-: clamp(180px, 22vw, 250px);
+  }
+  .Question,
+  .intro,
+  #Loading,
+  .play {
+    position: absolute;
+    z-index: 1;
+  }
+  #Loading {
+    display:none !important;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: left 1s ease-in;
+    text-align: center;
+    font-size: 4.6rem;
+    z-index: 2;
+    color: #09ff00;
+    text-shadow: 3px 0 #ffffff, -3px 0 #ffffff, 0 3px #ffffff, 0 -3px #ffffff,
+      2px 2px #ffffff, -2px -2px #ffffff, 2px -2px #ffffff, -2px 2px #fff;
+  }
+
+  .Question {
+    text-align: center;
+    font-size: 2em;
+    font-size: 0em;
+    display: none;
+    /* width: 640px; (Javascript) */
+    top: 6.4%;
+    z-index: 5;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 1.6s;
+    color: #fff;
+    letter-spacing: 4px;
+    text-shadow: 2px 0 #000000, -2px 0 #000000, 0 2px #000000, 0 -2px #000000,
+      1px 1px #000000, -1px -1px #000000, 1px -1px #000000, -1px 1px #000;
+  }
+
+  .score {
+    top: -20%;
+    right: 2%;
+    z-index: 1;
+    font-size: 3em;
+    transition: all 1.6s;
+    color: #fff;
+    position: absolute;
+    text-shadow: 2px 0 #000000, -2px 0 #000000, 0 2px #000000, 0 -2px #000000,
+      1px 1px #000000, -1px -1px #000000, 1px -1px #000000, -1px 1px #000;
+  }
+
+  /* Quewstions Divs */
+
+  .Qos{
+    z-index: 1;
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    width: 95vw;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    justify-content: center;
+  }
+  .qo.Qo1 {
+    display: none;
+    border-radius: 20px;
+    padding: clamp(7px, 3vw, 14px);
+    text-align: center;
+    width: clamp(55%, 80vw, 1000px);
+    height: fit-content;
+    font-size: clamp(1.5em, 4vw, 2.2em);
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.6s;
+    text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000, 1px 1px #000,
+      -1px -1px #000, 1px -1px #000, -1px 1px #000;
+  }
+  .qo.Qo2 {
+    display: none;
+    border-radius: 20px;
+    text-align: center;
+    width: clamp(15%, 25%, 250px);
+    height: fit-content;
+    font-size: clamp(1.0em, 4vw, 1.6em);
+    /* position: absolute; */
+    /* top: 25%; */
+    /* left: 50%; */
+    background-color: #0000004d;
+    border: white 2px solid;
+    transition: all 0.6s;
+    text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000, 1px 1px #000,
+      -1px -1px #000, 1px -1px #000, -1px 1px #000;
+  }
+  .qo .DropIn {
+    color:white;
+    margin: auto;
+    width: 90%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: clamp(1.5em, 4vw, 2.2em);
+    color: white;
+    letter-spacing: 3px;
+    font-weight: 300;
+    padding-bottom: 8px;
+    /* text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -1px #fff, 1px 1px #fff,
+      -1px -1px #fff, 1px -1px #fff, -1px 1px #fff; */
+  }
+  
+  .qo .DropIn1 {
+    margin: auto;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: clamp(1.0em, 4vw, 1.6em);
+    color: #000;
+    letter-spacing: 3px;
+    font-weight: 300;
+    padding: clamp(5px, 3vw, 13px);
+    padding-bottom: clamp(7px, 4vw, 20px) !important;
+    /* text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -1px #fff, 1px 1px #fff,
+      -1px -1px #fff, 1px -1px #fff, -1px 1px #fff; */
+  }
+  .quest1,
+  .quest2,
+  .quest3,
+  .quest4,
+  .quest5 {
+    display: flex;
+    position: absolute;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: auto;
+    height: 260px;
+    align-content: center;
+    align-items: center;
+    justify-content: space-around;
+    gap: clamp(15px, 8vw, 80px);
+    top: 150%;
+    transition: all 1.6s;
+  }
+  .quest6,
+  .quest7,
+  .quest8,
+  .quest9,
+  .quest10 {
+    display: flex;
+    position: absolute;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: auto;
+    height: 260px;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(10px, 2vw, 20px);
+    top: 150%;
+    transition: all 1.6s;
+  }
+  .quest1 .button-56,
+  .quest2 .button-56,
+  .quest3 .button-56,
+  .quest4 .button-56,
+  .quest5 .button-56,
+  .quest6 .button-56,
+  .quest7 .button-56,
+  .quest8 .button-56,
+  .quest9 .button-56,
+  .quest10 .button-56
+   {
+    color: #fff;
+    text-shadow: 3px 0 #000000, -3px 0 #000000, 0 3px #000000, 0 -3px #000000,
+      2px 2px #000000, -2px -2px #000000, 2px -2px #000000, -2px 2px #000;
+    display: flex;
+    font-size: 3vw;
+    font-size: clamp(2em, 4.5vw, 3.2em);
+    width: 15%;
+    width: clamp(150px, 28%, 360px);
+    height: fit-content;
+    justify-content: space-evenly;
+  }
+  .quest1 .button-6,
+  .quest2 .button-6,
+  .quest3 .button-6,
+  .quest4 .button-6,
+  .quest5 .button-6,
+  .quest6 .button-6,
+  .quest7 .button-6,
+  .quest8 .button-6,
+  .quest9 .button-6,
+  .quest10 .button-6 {
+    color: #fff;
+    text-shadow: 3px 0 #000000, -3px 0 #000000, 0 3px #000000, 0 -3px #000000,
+      2px 2px #000000, -2px -2px #000000, 2px -2px #000000, -2px 2px #000;
+    display: flex;
+    font-size: 3vw;
+    font-size: clamp(1em, 2.5vw, 2.0em);
+    width: 10%;
+    width: clamp(10vw,32vw,31vw);
+    height: clamp(38px, 5.456vw, 79px);
+    justify-content: space-evenly;
+  }
+  .cart {
+    --size-: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    width: var(--size-);
+    height: var(--size-);
+    width: 250px;
+    height: 150px;
+    transition: margin 0.3s, box-shadow 0.3s, background 0.6s, top 1.6s;
+    border-radius: 20px;
+  }
+  .play {
+    padding-bottom: 10px;
+    width: clamp(120px, 40vw, 250px);
+    height: 80px;
+    left: 50%;
+    top: 150%;
+    position: absolute;
+    /* box-shadow: 0 -20px 0 1px var(--clr1_Shade_btn-); */
+    color: #fff;
+    z-index: 12;
+    font-size: clamp(1.3em, 12vw, 5em);
+    /* width: clamp(120px, 50vw, 250px); */
+    /* letter-spacing: 4px; */
+    text-shadow: 3px 0 #000000, -3px 0 #000000, 0 3px #000000, 0 -3px #000000,
+      2px 2px #000000, -2px -2px #000000, 2px -2px #000000, -2px 2px #000;
+    transition: margin 0.3s, box-shadow 0.3s, background 0.6s, top 1.6s;
+    transform: translateX(-50%);
+    background: var(--Liner-);
+  }
+  
+  .game a {
+    color: #fff;
+    text-shadow: 3px 0 #000000, -3px 0 #000000, 0 3px #000000, 0 -3px #000000,
+      2px 2px #000000, -2px -2px #000000, 2px -2px #000000, -2px 2px #000;
+    font-size: 2.3em;
+    display: block;
+    text-align: center;
+    height: 100%;
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    position: absolute;
+    
+    background: var(--liner-);
+  }
+  #ReplayMusic {
+    position: absolute;
+    right: 2%;
+    top: clamp(72px, 12vw, 15%);
+    padding: 2px;
+    width: clamp(35px,7.6vw,50px);
+    background-color: #ffc372;
+    border-radius: 12px;
+    cursor: pointer;
+    display: none;
+    opacity: 0;
+    transition: all 1.6s ease;
+  }
+  .game {
+    transition: margin 0.3s, box-shadow 0.3s, background 0.6s, top 1.6s,
+      width 0.8s, height 0.8s;
+    border-radius: 30px;
+    position: absolute;
+    box-shadow: 0 0 0 6px #fff;
+  }
+  .game:hover {
+    box-shadow: 0 #fff;
+  }
+  .ReplayGame {
+    display: flex;
+    display: none;
+    top: 55%;
+    left: 30%;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-55%);
+    font-size: clamp(10px, 1.3vw, 26px);
+    width: clamp(100px, 40vw, 200px);
+    height: clamp(51px, 0vw, 200px);
+   background: var(--Liner-);
+  }
+  .ExitGame.game {
+    display: flex;
+    display: none;
+    top: 55%;
+    left: 70%;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-40%);
+    font-size: clamp(10px, 1.3vw, 26px);
+    width: clamp(100px, 40vw, 200px);
+    height: clamp(51px, 0vw, 200px);
+    background: var(--Liner-);
+  }
+  @media (min-width: 720px) {
+    .ReplayGame {
+
+      transform: translateX(-50%);
+
+    }
+    .ExitGame.game {
+   
+      transform: translateX(-50%);
+     
+    }
+  }
+
+  .button-56 , .button-6 {
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    /* text-transform: uppercase; */
+    color: #000;
+    cursor: pointer;
+    border: 3px solid;
+    padding: 0.20em 0.6em 0.51em;
+    top: 30%;
+    left: 0;
+    /* box-shadow: 0 -1.5px 0 1px, 0 -3px 0 1px, 0 -4.5px 0 1px, 0 -6px 0 1px,
+      0 -7.5px 0 1px; */
+    transition: 0.1s;
+    border-radius: 30px;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  .quest1 .button-56,
+  .quest2 .button-56,
+  .quest3 .button-56,
+  .quest4 .button-56,
+  .quest5 .button-56,
+  .quest6 .button-56,
+  .quest7 .button-56,
+  .quest8 .button-56,
+  .quest9 .button-56,
+  .quest10 .button-56,
+  .quest1 .button-6,
+  .quest2 .button-6,
+  .quest3 .button-6,
+  .quest4 .button-6,
+  .quest5 .button-6,
+  .quest6 .button-6,
+  .quest7 .button-6,
+  .quest8 .button-6,
+  .quest9 .button-6,
+  .quest10 .button-6 {
+    background-color: rgb(87 87 217);    /* border: var(--borderHV-) 2px dashed; */
+    /* box-shadow: 0 -2px 0 1px var(--borderSH-), 0 -4px 0 1px var(--borderSH-),
+      0 -6px 0 1px var(--borderSH-), 0 -8px 0 1px var(--borderHV-),
+      0 -10px 0 1px var(--borderHV-); */
+  }
+  
+  /* .button-56:active , .button-6:active {
+    box-shadow: 0 0 0 0px !important;
+    top: 25.6%;
+  } */
+  #canvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    pointer-events: none;
+  }
+  .img2{
+    bottom: -90% !important;
+    left:20% !important;
+  }
+  .img2 img{
+    bottom: 0% !important;
+  }
+  .images {
+    position: absolute;
+    width: 97%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    bottom: 0;
+  }
+  .images img:nth-child(1) {
+    left: 50%;
+    transform: translateX(-50%);
+    height: 300px;
+    bottom: 0;
+    position: absolute;
+  }
+  .images.img2 img:nth-child(1) {
+    left: 50%;
+    transform: translateX(-50%);
+    height: 200px;
+    bottom: 150px;
+    position: absolute;
+  }
+  @media (max-width: 720px) {
+    .qo .DropIn1 {
+      height: 40px;}
+    .images {
+      bottom: 55%;
+    }
+    .images img:nth-child(1) {
+      height: 210px;
+    }
+    .images.img2 img:nth-child(1) {
+        height: 170px;
+        bottom: 0;
+    }
+    .Question {
+      top: 16%;
+    }
+    .score {
+      font-size: clamp(1.8em, 5.2vw, 2.6em);
+    }
+    .Qos {
+        flex-wrap: wrap;
+    }
+    .qo.Qo1 {
+      top: 22%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: clamp(120px, 90vw, 90vw);
+    }
+    .qo.Qo2 {
+        width: clamp(10vw,30%,50vw);
+    }
+    .quest1,
+    .quest2,
+    .quest3,
+    .quest4,
+    .quest5,
+    .quest6,
+    .quest7,
+    .quest8,
+    .quest9,
+    .quest10 {
+      display: flex;
+      position: absolute;
+      flex-wrap: wrap;
+      width: 100%;
+      margin: auto;
+      /* padding: 0.15em 0.44em 0.5em; */
+      top: 63%;
+      top: 150%;
+      /* gap: 20px; */
+      transition: all 1.6s;
+    }
+    .button-56 {
+      width: 48% !important;
+      top: 32%;
+      height: 67px !important;
+      font-size: clamp(1.6em, 3vw, 1.6em) !important;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    /* .button-56:active , .button-6:active {
+      box-shadow: 0 0 0 0px !important;
+      top: 27%;
+    } */
+
+    .img2 {
+      bottom: -90%;
+      left:25%;
+  }
+  }
+  @media (max-width: 420px) {
+    .ReplayGame {
+      font-size: clamp(10px, 0.6vw, 24px) !important;
+    }
+    .ExitGame {
+      font-size: clamp(12px, 0.8vw, 24px) !important;
+    }
+  }
+  @media (max-height: 660px) {
+      
+      /* font-size: clamp(2em, 5.5vw, 3.2em); */
+  }
+  
+     </style>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+    <div class="frame1"></div>
+    <div class="frame2"></div>
+    <!-- Game Start -->
+    <div class="Game">
+        <img id="ReplayMusic" src="./Images/muice.jpg" alt="">
+        <img id="Logo" src="Images/English%20easy%20logo-01.png" alt="Logo">
+        <p class="Question">Choose the correct word and press it.</p>
+        <p class="score" >score : 0</p>
+        <div class="Qos">
+            <div class="qo Qo1">
+                <div class="DropIn CD">
+        
+                    Back to school, it's .....
+                </div>
+            </div>
+            <div class="qo Qo2">
+                <div class="DropIn1 CD CD1">
+                    
+                </div>
+            </div>
+            <div class="qo Qo2">
+                <div class="DropIn1 CD CD2">
+                    
+                </div>
+            </div>
+            <div class="qo Qo2">
+                <div class="DropIn1 CD CD3">
+                    
+                </div>
+            </div>
+            <div class="qo Qo2">
+                <div class="DropIn1 CD CD4">
+                    
+                </div>
+            </div>
+            <div class="qo Qo2">
+                <div class="DropIn1 CD CD5">
+                    
+                </div>
+            </div>
+            <div class="qo Qo2">
+                <div class="DropIn1 CD CD6">
+                    
+                </div>
+            </div>
+             <div class="qo Qo2">
+                <div class="DropIn1 CD CD7">
+                    
+                </div>
+            </div>
+            
+            <div class="qo Qo2">
+                <div class="DropIn1 CD CD8">
+                    
+                </div>
+            </div> 
+    
+        </div>
+        <p id="Loading" class="load">Loading</p>
+        <div class="cart play">Play</div>
+        <div class="quest1"> 
+            <div class="images">
+                <img src="./Images/man.png" alt="">
+            </div>
+            <button draggable="true" class="button-56 btn1 correct cc1" role="button">
+                <span class="text">Fall</span>
+            </button>
+            <button draggable="true" class="button-56 btn1 wrong ww1" role="button">
+                <span class="text">Call</span>
+            </button>
+        </div> 
+        <div class="quest2">
+            <div class="images">
+                <img src="./Images/women.png" alt="">
+            </div>
+            <button draggable="true" class="button-56 btn2 mother wrong ww2" role="button">
+                <span class="text">Summer's</span>
+            </button>
+            <button draggable="true" class="button-56 btn2 sister correct cc2"  role="button">
+                <span class="text">Winter's</span>
+            </button>
+        </div>
+        <div class="quest3">
+            <div class="images">
+                <img src="./Images/cat.png" alt="">
+            </div>
+            <button draggable="true" class="button-56 btn3 wrong ww3" onclick="playButtonSound(this)" role="button">
+                <span class="text">Fall</span>
+            </button>
+            <button draggable="true" class="button-56 btn3 correct cc3" role="button">
+                <span class="text">Spring</span>
+            </button>
+        </div>
+        <div class="quest4">
+            <div class="images">
+                <img src="./Images/space.png" alt="">
+            </div>
+            <button draggable="true" class="button-56 btn4 correct cc4" role="button">
+                <span class="text">July</span>
+            </button>
+
+            <button draggable="true" class="button-56 btn4 wrong ww4" role="button">
+                <span class="text">October</span>
+            </button>
+       
+            
+        </div>
+        <div class="quest5">
+            <div class="images">
+                <img src="./Images/kong.png" alt="">
+            </div>
+            <button draggable="true" class="button-56 btn5 correct cc5" role="button">
+                <span class="text">School</span>
+            </button>
+            <button draggable="true"  class="button-56 btn5 wrong ww5" role="button" onclick="playButtonSound(this)">
+                <span class="text">Home</span>
+            </button>
+        </div>
+        <audio id="audio-player" preload="auto"></audio>
+        <div class="quest6">
+            <div class="images img2">
+                <img src="./Images/cat.png" alt="">
+            </div>
+            <button draggable="true" data-sound="./lib/getting2.mp3"  class="button-6 btn6 wrong ww6 correct cc6 Getting"  role="button" onclick="playButtonSound(this)"  ondragstart="startDrag(event, this)">
+                <span class="text">Getting</span>
+            </button>
+            <button draggable="true" data-sound="./lib/here.mp3" class="button-6 btn6 wrong ww6 correct cc6  here" role="button" onclick="playButtonSound(this)" ondragstart="startDrag(event, this)">
+                <span class="text">Here</span>
+            </button>
+            <button draggable="true" data-sound="./lib/cooler.mp3" class="button-6 btn6 wrong ww6 correct cc6  cooler," role="button" onclick="playButtonSound(this)"  ondragstart="startDrag(event, this)">
+                <span class="text">Cooler,</span>
+            </button>
+            <button draggable="true" data-sound="./lib/winters.mp3" class="button-6 btn6 wrong ww6 correct cc6 winter's" role="button" onclick="playButtonSound(this)"  ondragstart="startDrag(event, this)">
+                <span class="text">Winter's</span>
+            </button>
+         
+        </div>
+        <div class="quest7">
+            <div class="images img2">
+                <img src="./Images/space.png" alt="">
+            </div>
+            <button draggable="true" data-sound="./lib/it2.mp3" class="button-6 btn7 wrong ww7 correct cc7 it's" role="button" onclick="playButtonSound(this)" ondragstart="startDrag(event, this)" >
+                <span class="text">It's</span>
+            </button>
+            <button draggable="true" data-sound="./lib/flowers.mp3" class="button-6 btn7 wrong ww7 correct cc7 Flowers" role="button" onclick="playButtonSound(this)" ondragstart="startDrag(event, this)">
+                <span class="text">Flowers</span>
+            </button>
+            <button draggable="true" data-sound="./lib/spring.mp3" class="button-6 btn7 wrong ww7 correct cc7 spring" role="button" onclick="playButtonSound(this)"  ondragstart="startDrag(event, this)">
+                <span class="text">Spring</span>
+            </button>
+            <button draggable="true" data-sound="./lib/areout.mp3" class="button-6 btn7 wrong ww7 correct cc7 are-out," role="button" onclick="playButtonSound(this)"  ondragstart="startDrag(event, this)">
+                <span class="text">Are out,</span>
+            </button>
+        </div>
+        <div class="quest8">
+            <div class="images img2">
+                <img src="./Images/man.png" alt="">
+            </div>
+            <button draggable="true" data-sound="./lib/july.mp3" class="button-6 btn8 wrong ww8 correct cc8 july," role="button" onclick="playButtonSound(this)"  ondragstart="startDrag(event, this)">
+                <span class="text">July,</span>
+            </button>
+            <button draggable="true" data-sound="./lib/here.mp3" class="button-6 btn8 wrong ww8 correct cc8 here" role="button" onclick="playButtonSound(this)"  ondragstart="startDrag(event, this)">
+                <span class="text">Here</span>
+            </button>
+            <button draggable="true" data-sound="./lib/aug.mp3" class="button-6 btn8 wrong ww8 correct cc8 august" role="button" onclick="playButtonSound(this)" ondragstart="startDrag(event, this)">
+                <span class="text">August</span>
+            </button>
+            <button draggable="true" data-sound="./lib/june.mp3" class="button-6 btn8 wrong ww8 correct cc8 june," role="button" onclick="playButtonSound(this)"  ondragstart="startDrag(event, this)">
+                <span class="text">June,</span>
+            </button>
+            <button draggable="true" data-sound="./lib/summer.mp3" class="button-6 btn8 wrong ww8 correct cc8 Summer's" role="button" onclick="playButtonSound(this)"  ondragstart="startDrag(event, this)">
+                <span class="text">Summer's</span>
+            </button>
+        </div>
+       
+        
+            <p class="ReplayGame game"><a href="index.html">Play Again</a></p>
+            <p class="ExitGame game"><a href="https://englisheasy.net/dashboard">Exit</a></p>
+              
+    </div>
+    <script>
+        // Important Variables
+const frame1 = document.querySelector(".frame1");
+const frame2 = document.querySelector(".frame2");
+var game = document.getElementsByClassName("Game")[0];
+var logo = document.getElementById("Logo");
+var question = document.getElementsByClassName("Question")[0];
+var playbtn = document.getElementsByClassName("play")[0];
+var ReplayMusic = document.getElementById("ReplayMusic");
+var score = document.getElementsByClassName("score")[0];
+var scoreval = 0;
+
+// Cheering Audio
+var cheer1 = new Audio("./lib/c2.mp3");
+var cheer2 = new Audio("./lib/children.wav");
+var cheer3 = new Audio("./lib/c2.mp3");
+
+// Main Question Answer 
+var Drop = document.getElementsByClassName("DropIn")[0];
+var Drop1 = document.getElementsByClassName("DropIn1");
+var mainqo = document.getElementsByClassName("qo")[0];
+var mainqo1 = document.getElementsByClassName("Qo2");
+var qos = document.getElementsByClassName("Qos")[0];
+
+// Questions Audio
+var qoo1 = new Audio("./lib/backschool.mp3");
+var qoo2 = new Audio("./lib/getting.mp3");
+var qoo3 = new Audio("./lib/flower.mp3");
+var qoo4 = new Audio("./lib/summer2.mp3");
+// var qoo5 = new Audio("./Sound/do you see a dolphin ans5.mp3");
+// var qoo6 = new Audio("./Sound/i like cheese ans6.mp3");
+// var qoo7 = new Audio("./Sound/chocolate ans7.mp3");
+// var qoo8 = new Audio("./Sound/this is a phone ans 8.mp3");
+
+// Again
+var qo1 = new Audio("./lib/backschool.mp3");
+var qo2 = new Audio("./lib/getting.mp3");
+var qo3 = new Audio("./lib/flower.mp3");
+var qo4 = new Audio("./lib/summer2.mp3");
+// var qo5 = new Audio("./Sound/do you see a dolphin ans5.mp3");
+// var qo6 = new Audio("./Sound/i like cheese ans6.mp3");
+// var qo7 = new Audio("./Sound/chocolate ans7.mp3");
+// var qo8 = new Audio("./Sound/this is a phone ans 8.mp3");
+
+
+
+
+var qo = new Audio("./lib/qu.mp3");
+var qoar = new Audio("./lib/qu1.mp3");
+
+
+
+
+// Reactions Audio
+var Brill1 = new Audio("./lib/brillent.mp3");
+var Brill2 = new Audio("./lib/brillent2.mp3");
+var Good1 = new Audio("./lib/goodnew.mp3");
+var Good2 = new Audio("./lib/goodar.mp3");
+var Great1 = new Audio("./lib/great.wav");
+var Great2 = new Audio("./lib/nice.mp3");
+var Ex1 = new Audio("./lib/exlient.mp3");
+var Ex2 = new Audio("./lib/exlient2.mp3");
+var Aw1 = new Audio("./lib/awesome.mp3");
+var Aw2 = new Audio("./lib/awesome2.mp3");
+var Tryagain = new Audio("./lib/false2.aac");
+// var Tryagain2 = new Audio("./lib/war.mp3");
+
+
+// Review Audio 
+// 1 : 4 
+var r1 = new Audio("./lib/fall.mp3"); //true
+var r2 = new Audio("./lib/call.mp3"); //false
+
+var r3 = new Audio("./lib/summer.mp3"); // false
+var r4 = new Audio("./lib/winter.mp3"); //true
+
+var r5 = new Audio("./lib/fall.mp3"); //false
+var r6 = new Audio("./lib/spring.mp3");// true
+
+var r7 = new Audio("./lib/october.mp3");// false
+var r8 = new Audio("./lib/july.mp3");//true
+
+// 5 : 8 
+var r9 = new Audio("./lib/home.mp3"); //false
+var r10 = new Audio("./lib/school.mp3"); //true
+
+// var r11 = new Audio("./Sound/chees ans6t.mp3"); //false
+// var r12 = new Audio("./Sound/cheese ans6t.mp3"); //true
+
+// var r13 = new Audio("./Sound/ship ans3t.mp3"); //false
+// var r14 = new Audio("./Sound/chocolate ans7.mp3"); //true
+
+// var r15 = new Audio("./Sound/photo ans8 f.mp3"); //false
+// var r16 = new Audio("./Sound/phone ans8t.mp3"); //true
+
+
+
+// Questions Divs
+var Quest1 = document.getElementsByClassName("quest1")[0];
+var Quest2 = document.getElementsByClassName("quest2")[0];
+var Quest3 = document.getElementsByClassName("quest3")[0];
+var Quest4 = document.getElementsByClassName("quest4")[0];
+var Quest5 = document.getElementsByClassName("quest5")[0];
+var Quest6 = document.getElementsByClassName("quest6")[0];
+var Quest7 = document.getElementsByClassName("quest7")[0];
+var Quest8 = document.getElementsByClassName("quest8")[0];
+var Quest9 = document.getElementsByClassName("quest9")[0];
+var Quest10 = document.getElementsByClassName("quest10")[0];
+
+function DoneLoading() {
+  clearInterval(Loadas);
+  afterIntervalCleared();
+}
+var y = 0;
+var idx = 0;
+var Loadas;
+window.addEventListener("load", function () {
+  idx = 4;
+});
+document.addEventListener("DOMContentLoaded", function () {
+  function Loadingtime() {
+    Loadas = setInterval(function () {
+      idx++;
+      switch (idx) {
+        case 0:
+          document.getElementById("Loading").innerHTML = "Loading";
+          document.getElementById("Loading").style.color = "DodgerBlue";
+          break;
+        case 1:
+          document.getElementById("Loading").innerHTML = "Loading.";
+          document.getElementById("Loading").style.color = "OliveDrab";
+          break;
+        case 2:
+          document.getElementById("Loading").innerHTML = "Loading..";
+          document.getElementById("Loading").style.color = "Gold";
+          break;
+        case 3:
+          document.getElementById("Loading").innerHTML = "Loading...";
+          document.getElementById("Loading").style.color = "SlateBlue";
+          break;
+        case 4:
+          document.getElementById("Loading").innerHTML = "Loading....";
+          document.getElementById("Loading").style.color = "PaleGreen";
+          idx = -1;
+          break;
+        case 5:
+          document.getElementById("Loading").innerHTML = "Loaded";
+          document.getElementById("Loading").style.color = "Violet";
+          break;
+        case 6:
+          document.getElementById("Loading").innerHTML = "Loaded";
+          document.getElementById("Loading").style.color = "Chocolate";
+          break;
+        case 7:
+          document.getElementById("Loading").innerHTML = "Loaded";
+          document.getElementById("Loading").style.color = "Crimson";
+          DoneLoading();
+          break;
+        default:
+          document.getElementById("Loading").innerHTML = "Loading";
+          idx = 0;
+          break;
+      }
+    }, 700);
+  }
+  Loadingtime();
+});
+function afterIntervalCleared() {
+  setTimeout(function () {
+    document.body.querySelector("#Loading").style.left = "-50%";
+    // logo.style.setProperty("Left", "calc(2%)");
+    // logo.style.top = "3%";
+    logo.style.setProperty("width", "calc(200px)");
+    logo.style.setProperty("transform", "translate(-50%, 90%)");
+    playbtn.style.top = "56%";
+    y = 0;
+  }, 900);
+}
+function firstquest() {
+  setTimeout(function () {
+    qo.play();
+    setTimeout(() => {
+      qoar.play()
+    }, 2500);
+    Drop.style.setProperty("display", "none");
+    setTimeout(function () {
+      // question.style.fontSize = "0";
+      setTimeout(() => {
+        question.style.display = "none";
+
+      }, 1600);
+    }, 5400);
+    setTimeout(() => {
+      mainqo.style.setProperty("display", "block");
+      setTimeout(() => {
+        Drop.style.setProperty("display", "flex");
+        Quest1.style.setProperty("top", "47%");
+      }, 900);
+    }, 6400);
+    sayquestion(qoo1, 7600, 1800);
+  }, 200);
+}
+var voice = 0;
+var force = 0;
+function startInterval(qopar) {
+  const intervalId = setInterval(function () {
+    console.log(voice);
+    setTimeout(function () {
+      if (qopar.currentTime == 0) {
+        qopar.play();
+        voice = 1;
+      }
+    }, 250);
+    if (voice == 1 || force == 1) {
+      setTimeout(() => {
+        voice = 0;
+        force = 0;
+      }, 1000);
+      clearInterval(intervalId);
+    }
+  }, 250);
+}
+function sayquestion(qoaud, x, y) {
+  setTimeout(function () {
+    qo.pause();
+    setInterval(() => {
+      qo.pause();
+    }, 50);
+    qoaud.play();
+    setTimeout(function () {
+      if (y == 0) {
+      } else {
+        qoaud.pause();
+        qoaud.currentTime = 0;
+      }
+    }, y);
+    startInterval(qoaud);
+  }, x);
+}
+playbtn.onclick = function () {
+  setTimeout(function () {
+    setTimeout(function () {
+      game.style.display = "none";
+      question.style.display = "none";
+      frame1.classList.add("animate-frame");
+      frame2.classList.add("animate-frame");
+      setTimeout(function () {
+        frame1.classList.remove("animate-frame");
+        frame2.classList.remove("animate-frame");
+
+      }, 1500)
+      setTimeout(function () {
+        game.style.display = "block";
+        question.style.display = "block";
+        playbtn.style.display = "none"
+        setTimeout(function () {
+          frame1.classList.add("animate-frame");
+          frame2.classList.add("animate-frame");
+          setTimeout(function () {
+            frame1.classList.remove("animate-frame");
+            frame2.classList.remove("animate-frame");
+          }, 3000)
+        }, 5000)
+      }, 1200)
+
+    }, 100)
+    setTimeout(function () {
+      console.log(window.innerWidth);
+      ReplayMusic.style.display = "block";
+      if (window.innerWidth <= 768) {
+        console.log("This is a mobile Screen");
+        question.style.fontSize = "clamp(1.2em, 5.5vw, 1.8em)";
+        question.style.width = "clamp(300px, 65vw, 500px)";
+        logo.style.top = "3%";
+        logo.style.width = "clamp(120px,20vw,160px)";
+        score.style.top = 4 + "%";
+        logo.style.setProperty("Left", "calc(2%)");
+        logo.style.top = "3%";
+        logo.style.setProperty("width", "calc(150px)");
+        logo.style.setProperty("transform", "translate(0%, 0%)");
+        question.style.top = "40%";
+
+      } else {
+        question.style.top = "40%";
+        question.style.fontSize = "clamp(1.2em, 5.5vw, 2.6em)";
+        question.style.width = "clamp(200px, 45vw, 600px)";
+        logo.style.top = "3%";
+        score.style.top = 4 + "%";
+        logo.style.setProperty("Left", "calc(2%)");
+        logo.style.top = "3%";
+        logo.style.setProperty("width", "calc(150px)");
+        logo.style.setProperty("transform", "translate(0%, 0%)");
+      }
+      setTimeout(() => {
+        ReplayMusic.style.opacity = 1;
+        firstquest();
+      }, 100);
+    }, 200);
+  }, 100);
+};
+
+ReplayMusic.onclick = function () {
+  qon().pause();
+  qon().currentTime = 0;
+  qon().play();
+};
+var corrects = document.querySelectorAll(".correct");
+var wrongs = document.querySelectorAll(".wrong");
+var x = 0;
+var quiz = 1;
+// function checkClass(e) {
+//   if (e.classList.contains("cc1") === !0) {
+//     x = 1;
+//   } else if (e.classList.contains("cc2") === !0) {
+//     x = 2;
+//   } else if (e.classList.contains("cc3") === !0) {
+//     x = 3;
+//   } else if (e.classList.contains("cc4") === !0) {
+//     x = 4;
+//   }
+// }
+// function checkClassWrong(e) {
+//   if (e.classList.contains("Hash") === !0) {
+//     x = 1;
+//   } else if (e.classList.contains("eleven") === !0) {
+//     x = 2;
+//   } else if (e.classList.contains("Jedd") === !0) {
+//     x = 3;
+//   } else if (e.classList.contains("Too") === !0) {
+//     x = 4;
+//   }
+// }
+function qon() {
+  console.log(quiz);
+  switch (quiz) {
+    case 1:
+      return qo1;
+      break;
+    case 2:
+      return qo2;
+      break;
+    case 3:
+      return qo3;
+      break;
+    case 4:
+      return qo4;
+      break;
+    case 5:
+      return qo1;
+      break;
+    case 6:
+      return qo2;
+      break;
+    case 7:
+      return qo3;
+      break;
+    case 8:
+      return qo4;
+      break;
+    case 9:
+      return qo1;
+      break;
+    case 10:
+      return qo2;
+      break;
+    default:
+      break;
+  }
+}
+function stopquiz(quiz) {
+  switch (quiz) {
+    case 1:
+      qo1.pause();
+      break;
+    case 2:
+      qo2.pause();
+      break;
+    case 3:
+      qo3.pause();
+      break;
+    case 4:
+      qo4.pause();
+      break;
+    case 5:
+      qo1.pause();
+      break;
+    case 6:
+      qo2.pause();
+      break;
+    case 7:
+      qo3.pause();
+      break;
+    case 8:
+      qo4.pause();
+      break;
+    case 9:
+      qo1.pause();
+      break;
+    case 10:
+      qo2.pause();
+      break;
+    default:
+      break;
+  }
+}
+let W = window.innerWidth;
+let H = window.innerHeight;
+const canvas = document.getElementById("canvas");
+const context = canvas.getContext("2d");
+const maxConfettis = 130;
+const particles = [];
+let animationId;
+let animationStartTime;
+const possibleColors = [
+  "DodgerBlue",
+  "OliveDrab",
+  "Gold",
+  "Pink",
+  "SlateBlue",
+  "LightBlue",
+  "Violet",
+  "PaleGreen",
+  "SteelBlue",
+  "SandyBrown",
+  "Chocolate",
+  "Crimson",
+];
+function randomFromTo(from, to) {
+  return Math.floor(Math.random() * (to - from + 1) + from);
+}
+function confettiParticle() {
+  this.x = W / 2;
+  this.y = H / 2;
+  this.r = randomFromTo(11, 33);
+  this.d = Math.random() * maxConfettis + 11;
+  this.color =
+    possibleColors[Math.floor(Math.random() * possibleColors.length)];
+  this.vx = (Math.random() - 0.5) * 40;
+  this.vy = (Math.random() - 0.5) * 30;
+  this.tilt = Math.floor(Math.random() * 33) - 11;
+  this.tiltAngleIncremental = Math.random() * 0.07 + 0.05;
+  this.tiltAngle = 0;
+  this.draw = function () {
+    context.beginPath();
+    context.lineWidth = this.r / 2;
+    context.strokeStyle = this.color;
+    context.moveTo(this.x + this.tilt + this.r / 3, this.y);
+    context.lineTo(this.x + this.tilt, this.y + this.tilt + this.r / 5);
+    context.stroke();
+  };
+  this.update = function () {
+    this.tiltAngle += this.tiltAngleIncremental;
+    this.x += this.vx;
+    this.y += this.vy;
+    this.tilt = Math.sin(this.tiltAngle) * 15;
+  };
+}
+function Draw() {
+  const currentTime = new Date().getTime();
+  if (currentTime - animationStartTime >= 500) {
+    cancelAnimationFrame(animationId);
+    context.clearRect(0, 0, W, H);
+    return;
+  }
+  context.clearRect(0, 0, W, H);
+  for (var i = 0; i < maxConfettis; i++) {
+    particles[i].update();
+    particles[i].draw();
+  }
+  animationId = requestAnimationFrame(Draw);
+}
+function explosion() {
+  particles.length = 0;
+  for (var i = 0; i < maxConfettis; i++) {
+    particles.push(new confettiParticle());
+  }
+  animationStartTime = new Date().getTime();
+  canvas.width = W;
+  canvas.height = H;
+  Draw();
+}
+function tripleboom() {
+  explosion();
+  setTimeout(() => {
+    explosion();
+    setTimeout(() => {
+      explosion();
+    }, 550);
+  }, 550);
+}
+window.addEventListener(
+  "resize",
+  function () {
+    W = window.innerWidth;
+    H = window.innerHeight;
+    canvas.width = window.innerWidth;
+    canvas.height = window.inner;
+  },
+  !1
+);
+const DropElement = document.querySelectorAll(".DropIn");
+const DropElement1 = document.querySelectorAll(".DropIn1");
+const buttons = document.querySelectorAll(".button-56");
+const buttons1 = document.querySelectorAll(".button-6");
+let draggedButton = null;
+var draggtemp = null;
+DropElement.forEach((element, index) => {
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.type === "childList") {
+        if (element.textContent === "Back to school, it's fall.") { // Case 1 Jack
+          console.log(`Element ${index + 1} text matches!`);
+          Drop.style.color = "rgb(92 255 40)";
+          for (let i = 0; i < Drop1.length; i++) {
+            Drop1[i].style.color = "rgb(92 255 40)";
+          }
+          Drop.style.setProperty("font-size", "clamp(1.3em , 4vw , 2.2em)");
+          switch (quiz) {
+            case 1:
+              force = 1;
+              scoreval++;
+              score.innerHTML = `score : ${scoreval}`;
+              r1.play();
+              stopquiz(quiz);
+              Tryagain.pause();
+              Tryagain.currentTime = 0;
+              // qon().pause();
+              qon().currentTime = 0;
+              // qon().play();
+              setTimeout(function () {
+                quiz = 2;
+                Great1.play();
+                setTimeout(function () {
+                  setTimeout(function () {
+                    Great2.play();
+                  }, 500)
+                  setTimeout(function () {
+                    cheer1.currentTime = 0;
+                    cheer1.play();
+                  }, 1000)
+                  setTimeout(function () {
+                    tripleboom();
+                  }, 1000)
+
+                  setTimeout(function () {
+                    setTimeout(function () {
+                      frame1.classList.add("animate-frame");
+                      frame2.classList.add("animate-frame");
+                      setTimeout(function () {
+                        frame1.classList.remove("animate-frame");
+                        frame2.classList.remove("animate-frame");
+                      }, 3500)
+                      Quest1.style.setProperty("top", "150%");
+                      Drop.style.setProperty("display", "none");
+                      mainqo.style.setProperty("display", "none");
+                      Drop.textContent = "Getting cooler, .... here.";
+                      Drop.style.color = "white";
+                      Drop.style.setProperty(
+                        "font-size",
+                        "clamp(1.3em , 4vw , 2.2em)"
+                      );
+                      force = 0;
+                      voice = 0;
+                      sayquestion(qoo2, 3000, 3000);
+                      setTimeout(function () {
+                        Quest2.style.setProperty("top", "47%");
+                        mainqo.style.setProperty("display", "block");
+                        setTimeout(function () {
+                          Drop.style.setProperty("display", "flex");
+                        }, 100);
+                      }, 1600);
+                    }, 1000);
+                  }, 3000);
+                }, 600);
+              }, 1600);
+              break;
+            case 5:
+
+              force = 1;
+              scoreval++;
+              score.innerHTML = `score : ${scoreval}`;
+              r10.play();
+              stopquiz(quiz);
+              Tryagain.pause();
+              Tryagain.currentTime = 0;
+              // qon().pause();
+              qon().currentTime = 0;
+              // qon().play();
+              setTimeout(function () {
+                quiz = 6;
+                Aw1.play();
+                setTimeout(function () {
+                  setTimeout(function () {
+                    Aw2.play();
+                  }, 500)
+                  setTimeout(function () {
+                    cheer1.currentTime = 0;
+                    cheer1.play();
+
+                  setTimeout(function () {
+                    tripleboom();
+                  }, 1000)
+                }, 1000)
+                }, 10)
+                setTimeout(function () {
+                  setTimeout(function () {
+                    frame1.classList.add("animate-frame");
+                    frame2.classList.add("animate-frame");
+                    setTimeout(function () {
+                      frame1.classList.remove("animate-frame");
+                      frame2.classList.remove("animate-frame");
+                    }, 3500)
+                    Quest5.style.setProperty("top", "150%");
+                    document.querySelector(".CD5").style.setProperty("display", "none");
+                    // document.querySelector(".qo .Qo2").style.setProperty("display", "none");
+                    Drop.style.setProperty("display", "none");
+                    mainqo.style.setProperty("display", "none");
+                    Drop.textContent = "Getting cooler, .... here.";
+                    Drop.style.color = "white";
+                    Drop.style.setProperty(
+                      "font-size",
+                      "clamp(1.3em , 4vw , 2.2em)"
+                    );
+                    var qo0 = new Audio("./lib/qo0.mp3")
+
+                    setTimeout(function () {
+                      question.textContent = 'Arrange the words in the correct order for the sentence.'
+                      question.style.display = "block";
+                      qo0.play();
+                    }, 1000);
+
+                    // setTimeout(() => {
+
+                      setTimeout(function () {
+                        frame1.classList.add("animate-frame");
+                        frame2.classList.add("animate-frame");
+                        question.style.display = "none";
+
+                      }, 7000)
+
+                      setTimeout(function () {
+                        frame1.classList.remove("animate-frame");
+                        frame2.classList.remove("animate-frame");
+                      }, 3500)
+
+                    // setTimeout(function () {
+                    // question.style.fontSize = "0";
+                    // setTimeout(() => {
+                    //   question.style.display = "none";
+                    // }, 1600);
+                    // }, 5000);
+                    setTimeout(() => {
+                      for (let i = 0; i < 4; i++) {
+                        mainqo1[i].style.setProperty("display", "block");
+                      }
+                      setTimeout(() => {
+                        for (let i = 0; i < 4; i++) {
+                          Drop1[i].style.setProperty("display", "flex");
+                          Drop1[i].style.color = "white";
+                          Drop1[i].textContent = " ";
+                        }
+                        Quest6.style.setProperty("top", "25%");
+                      }, 900);
+                    }, 8000);
+                    force = 0;
+                    voice = 0;
+                    sayquestion(qoo2, 9000, 3000);
+                  }, 2000);
+                }, 1200);
+              }, 1000);
+              break;
+            case 9:
+              force = 1;
+              scoreval++;
+              score.innerHTML = `score : ${scoreval}`;
+              stopquiz(quiz);
+              Tryagain.pause();
+              Tryagain.currentTime = 0;
+              qon().pause();
+              qon().currentTime = 0;
+              qon().play();
+              setTimeout(function () {
+                quiz = 10;
+                Good1.play();
+                setTimeout(function () {
+                  cheer1.currentTime = 0;
+                  cheer1.play();
+                  tripleboom();
+                  setTimeout(function () {
+                    Good2.play();
+                    setTimeout(function () {
+                      frame1.classList.add("animate-frame");
+                      frame2.classList.add("animate-frame");
+                      setTimeout(function () {
+                        frame1.classList.remove("animate-frame");
+                        frame2.classList.remove("animate-frame");
+                      }, 3500)
+                      Quest9.style.setProperty("top", "150%");
+                      Drop.style.setProperty("display", "none");
+                      for (let i = 0; i < 5; i++) {
+                        mainqo1[i].style.setProperty("display", "none");
+                      }
+                      for (let i = 0; i < 5; i++) {
+                        Drop1[i].style.setProperty("display", "none");
+                        Drop1[i].style.color = "white";
+                        Drop1[i].textContent = " ";
+                      }
+                      Drop.textContent = "Getting .... , winter's here.";
+                      Drop.style.color = "white";
+                      Drop.style.setProperty(
+                        "font-size",
+                        "clamp(1.5em , 4vw , 2.2em)"
+                      );
+                      force = 0;
+                      voice = 0;
+                      sayquestion(qon(), 2000, 2000);
+                      setTimeout(function () {
+                        Quest10.style.setProperty("top", "47%");
+                        for (let i = 0; i < 5; i++) {
+                          mainqo1[i].style.setProperty("display", "block");
+                        }
+                        setTimeout(function () {
+                          for (let i = 0; i < 5; i++) {
+                            Drop1[i].style.setProperty("display", "flex");
+                          }
+                        }, 100);
+                      }, 1600);
+                    }, 400);
+                  }, 3000);
+                }, 600);
+              }, 1600);
+              break;
+            default:
+              break;
+          }
+        } else if (element.textContent === "Getting cooler, winter's here.") { // Case 2 Mia
+          console.log(`Element ${index + 1} text matches!`);
+          Drop.style.color = "rgb(92 255 40)";
+          for (let i = 0; i < Drop1.length; i++) {
+            Drop1[i].style.color = "rgb(92 255 40)";
+          }
+          Drop.style.setProperty("font-size", "clamp(1.5em , 4vw , 2.2em)");
+          switch (quiz) {
+            case 2:
+              force = 1;
+              scoreval++;
+              score.innerHTML = `score : ${scoreval}`;
+              r4.play();
+              stopquiz(quiz);
+              Tryagain.pause();
+              Tryagain.currentTime = 0;
+              qon().currentTime = 0;
+              setTimeout(function () {
+                quiz = 3;
+                Good1.play();
+                setTimeout(function () {
+                  setTimeout(function () {
+                    Good2.play();
+                  }, 500)
+                  setTimeout(function () {
+                    cheer1.currentTime = 0;
+                    cheer1.play();
+                  }, 1000)
+                  setTimeout(function () {
+                    tripleboom();
+                  }, 1000)
+                  setTimeout(function () {
+                    setTimeout(function () {
+                      frame1.classList.add("animate-frame");
+                      frame2.classList.add("animate-frame");
+                      setTimeout(function () {
+                        frame1.classList.remove("animate-frame");
+                        frame2.classList.remove("animate-frame");
+                      }, 3500)
+                      Quest2.style.setProperty("top", "150%");
+                      Drop.style.setProperty("display", "none");
+                      mainqo.style.setProperty("display", "none");
+                      Drop.textContent = "Flowers are out, it's ....";
+                      Drop.style.color = "white";
+                      Drop.style.setProperty(
+                        "font-size",
+                        "clamp(1.5em , 4vw , 2.2em)"
+                      );
+                      force = 0;
+                      voice = 0;
+                      sayquestion(qoo3, 3000, 3000);
+                      setTimeout(function () {
+                        Quest3.style.setProperty("top", "47%");
+                        mainqo.style.setProperty("display", "block");
+                        setTimeout(function () {
+                          Drop.style.setProperty("display", "flex");
+                        }, 100);
+                      }, 1600);
+                    }, 1000);
+                  }, 3000);
+                }, 600);
+              }, 2800);
+              break;
+            case 6:
+
+              force = 1;
+              scoreval++;
+              score.innerHTML = `score : ${scoreval}`;
+              // r1.play();
+              qoo2.play()
+              stopquiz(quiz);
+              Tryagain.pause();
+              Tryagain.currentTime = 0;
+              // qon().pause();
+              qon().currentTime = 0;
+              // qon().play();
+              setTimeout(function () {
+                quiz = 7;
+                Great1.play();
+                setTimeout(function () {
+                  setTimeout(function () {
+                    Great2.play();
+                  }, 500)
+                  setTimeout(function () {
+                    cheer1.currentTime = 0;
+                    cheer1.play();
+                  }, 1000)
+                  setTimeout(function () {
+                    tripleboom();
+                  }, 1000)
+                  setTimeout(function () {
+                    frame1.classList.remove("animate-frame");
+                    frame2.classList.remove("animate-frame");
+                  }, 10)
+                  setTimeout(function () {
+                    setTimeout(function () {
+                      frame1.classList.add("animate-frame");
+                      frame2.classList.add("animate-frame");
+                      setTimeout(function () {
+                        frame1.classList.remove("animate-frame");
+                        frame2.classList.remove("animate-frame");
+                      }, 3500)
+      
+                      Quest6.style.setProperty("top", "150%");
+                      Drop.style.setProperty("display", "none");
+
+                      for (let i = 0; i < 5; i++) {
+                        mainqo1[i].style.setProperty("display", "none");
+                      }
+                      for (let i = 0; i < 5; i++) {
+                        Drop1[i].style.setProperty("display", "none");
+                        Drop1[i].style.color = "white";
+                        Drop1[i].textContent = " ";
+                      }
+                      Drop.textContent = "nice to .... you.";
+                      Drop.style.color = "white";
+                      Drop.style.setProperty(
+                        "font-size",
+                        "clamp(1.5em , 4vw , 2.2em)"
+                      );
+                      force = 0;
+                      voice = 0;
+                      sayquestion(qoo3, 3000, 3000);
+                      setTimeout(function () {
+                        Quest7.style.setProperty("top", "25%");
+                        for (let i = 0; i < 4; i++) {
+                          mainqo1[i].style.setProperty("display", "block");
+                        }
+                        setTimeout(function () {
+                          for (let i = 0; i < 4; i++) {
+                            Drop1[i].style.setProperty("display", "flex");
+                          }
+                        }, 100);
+                      }, 1600);
+                    }, 400);
+                  }, 3000);
+                }, 600);
+              }, 1800);
+              break;
+
+          }
+        } else if (element.textContent === "Flowers are out, it's spring") {
+          console.log(`Element ${index + 1} text matches!`);
+          Drop.style.color = "rgb(92 255 40)";
+          for (let i = 0; i < Drop1.length; i++) {
+            Drop1[i].style.color = "rgb(92 255 40)";
+          }
+          Drop.style.setProperty("font-size", "clamp(1.5em , 4vw , 2.2em)");
+          switch (quiz) {
+            case 3:
+              force = 1;
+              scoreval++;
+              score.innerHTML = `score : ${scoreval}`;
+              r6.play();
+              stopquiz(quiz);
+              Tryagain.pause();
+              Tryagain.currentTime = 0;
+              // qon().pause();
+              qon().currentTime = 0;
+              // qon().play();
+
+              setTimeout(function () {
+                quiz = 4;
+                Brill1.play();
+                setTimeout(function () {
+                  setTimeout(function () {
+                    Brill2.play();
+                  }, 500)
+
+                  setTimeout(function () {
+                    cheer1.currentTime = 0;
+                    cheer1.play();
+                  }, 1000)
+                  setTimeout(function () {
+                    tripleboom();
+                  }, 1000)
+                  setTimeout(function () {
+                    setTimeout(function () {
+                      frame1.classList.add("animate-frame");
+                      frame2.classList.add("animate-frame");
+                      setTimeout(function () {
+                        frame1.classList.remove("animate-frame");
+                        frame2.classList.remove("animate-frame");
+                      }, 3500)
+                      Quest3.style.setProperty("top", "150%");
+                      Drop.style.setProperty("display", "none");
+                      mainqo.style.setProperty("display", "none");
+                      Drop.textContent = "Summer's here june, .... , august";
+                      Drop.style.color = "white";
+                      Drop.style.setProperty(
+                        "font-size",
+                        "clamp(1.5em , 4vw , 2.2em)"
+                      );
+                      force = 0;
+                      voice = 0;
+                      sayquestion(qoo4, 3000, 3000);
+                      setTimeout(function () {
+                        Quest4.style.setProperty("top", "47%");
+                        mainqo.style.setProperty("display", "block");
+                        setTimeout(function () {
+                          Drop.style.setProperty("display", "flex");
+                        }, 100);
+                      }, 1600);
+                    }, 1000);
+                  }, 3000);
+                }, 600);
+              }, 1800);
+              break;
+            case 7:
+              force = 1;
+              scoreval++;
+              score.innerHTML = `score : ${scoreval}`;
+              qoo3.play();
+              stopquiz(quiz);
+              Tryagain.pause();
+              Tryagain.currentTime = 0;
+              // qon().pause();
+              qon().currentTime = 0;
+              // qon().play();
+              setTimeout(function () {
+                quiz = 8;
+                Great1.play();
+                setTimeout(function () {
+                  setTimeout(function () {
+                    Great2.play();
+                  }, 500)
+                  setTimeout(function () {
+                    cheer1.currentTime = 0;
+                    cheer1.play();
+                  }, 1000)
+                  setTimeout(function () {
+                    tripleboom();
+                  }, 1000)
+
+                  setTimeout(function () {
+                    setTimeout(function () {
+                      frame1.classList.add("animate-frame");
+                      frame2.classList.add("animate-frame");
+                      setTimeout(function () {
+                        frame1.classList.remove("animate-frame");
+                        frame2.classList.remove("animate-frame");
+                      }, 3500)
+                      Quest7.style.setProperty("top", "150%");
+                      Drop.style.setProperty("display", "none");
+                      for (let i = 0; i < 4; i++) {
+                        mainqo1[i].style.setProperty("display", "none");
+                      }
+                      for (let i = 0; i < 4; i++) {
+                        Drop1[i].style.setProperty("display", "none");
+                        Drop1[i].style.color = "white";
+                        Drop1[i].textContent = " ";
+                      }
+                      Drop.textContent = "Summer's here june, july, ....";
+                      Drop.style.color = "white";
+                      Drop.style.setProperty(
+                        "font-size",
+                        "clamp(1.5em , 4vw , 2.2em)"
+                      );
+                      force = 0;
+                      voice = 0;
+                      sayquestion(qoo4, 3000, 3000);
+                      setTimeout(function () {
+                        Quest8.style.setProperty("top", "25%");
+                        for (let i = 0; i < 5; i++) {
+                          mainqo1[i].style.setProperty("display", "block");
+                        }
+                        setTimeout(function () {
+                          for (let i = 0; i < 5; i++) {
+                            Drop1[i].style.setProperty("display", "flex");
+                          }
+                        }, 100);
+                      }, 1600);
+                    }, 400);
+                  }, 3000);
+                }, 600);
+              }, 1800);
+              break;
+
+
+            default:
+              break;
+          }
+        } else if (element.textContent === "Summer's here june, july, august") {
+          console.log(`Element ${index + 1} text matches!`);
+          Drop.style.color = "rgb(92 255 40)";
+          for (let i = 0; i < Drop1.length; i++) {
+            Drop1[i].style.color = "rgb(92 255 40)";
+          }
+          Drop.style.setProperty("font-size", "clamp(1.5em , 4vw , 2.2em)");
+          switch (quiz) {
+            case 4:
+              force = 1;
+              scoreval++;
+              score.innerHTML = `score : ${scoreval}`;
+
+              r8.play();
+              stopquiz(quiz);
+              Tryagain.pause();
+              Tryagain.currentTime = 0;
+              // qon().pause();
+              qon().currentTime = 0;
+              // qon().play();
+
+              setTimeout(function () {
+                quiz = 5;
+                Ex1.play();
+                setTimeout(function () {
+                  setTimeout(function () {
+                    Ex2.play();
+                  }, 500)
+
+                  setTimeout(function () {
+                    cheer1.currentTime = 0;
+                    cheer1.play();
+                  }, 1000)
+                  setTimeout(function () {
+                    tripleboom();
+                  }, 1000)
+
+                  setTimeout(function () {
+                    setTimeout(function () {
+                      frame1.classList.add("animate-frame");
+                      frame2.classList.add("animate-frame");
+                      setTimeout(function () {
+                        frame1.classList.remove("animate-frame");
+                        frame2.classList.remove("animate-frame");
+                      }, 3500)
+                      Quest4.style.setProperty("top", "150%");
+                      Drop.style.setProperty("display", "none");
+                      mainqo.style.setProperty("display", "none");
+                      Drop.textContent = "Back to ...., it's fall.";
+                      Drop.style.color = "white";
+                      Drop.style.setProperty(
+                        "font-size",
+                        "clamp(1.5em , 4vw , 2.2em)"
+                      );
+                      force = 0;
+                      voice = 0;
+                      sayquestion(qoo1, 3000, 3000);
+                      setTimeout(function () {
+                        Quest5.style.setProperty("top", "47%");
+                        mainqo.style.setProperty("display", "block");
+                        setTimeout(function () {
+                          Drop.style.setProperty("display", "flex");
+                        }, 100);
+                      }, 1600);
+                    }, 400);
+                  }, 3000);
+                }, 600);
+              }, 1800);
+              break;
+            case 8:
+              force = 1;
+              scoreval++;
+              score.innerHTML = `score : ${scoreval}`;
+              qoo4.play();
+              stopquiz(quiz);
+              Tryagain.pause();
+              Tryagain.currentTime = 0;
+              // qon().pause();
+              qon().currentTime = 0;
+              // qon().play();
+              setTimeout(function () {
+                // quiz = 2;
+                Great1.play();
+                setTimeout(function () {
+                  setTimeout(function () {
+                    Great2.play();
+                  }, 500)
+                  setTimeout(function () {
+                    cheer1.currentTime = 0;
+                    cheer1.play();
+                  }, 1000)
+                  setTimeout(function () {
+                    tripleboom();
+                  }, 1000)
+
+                  setTimeout(function () {
+                    setTimeout(function () {
+                      frame1.classList.add("animate-frame");
+                      frame2.classList.add("animate-frame");
+                      setTimeout(function () {
+                        frame1.classList.remove("animate-frame");
+                        frame2.classList.remove("animate-frame");
+                      }, 3500)
+                      Quest8.style.setProperty("top", "150%");
+                      setTimeout(function () {
+                        for (let i = 0; i < 5; i++) {
+                          mainqo1[i].style.setProperty("display", "none");
+                        }
+                        // Drop.style.color = "#000";
+                        Drop.style.setProperty(
+                          "font-size",
+                          "clamp(1.5em , 4vw , 2.2em)"
+                        );
+                        setTimeout(function () {
+                          force = 0;
+                          voice = 0;
+                          setTimeout(() => {
+                            ReplayMusic.style.opacity = 0
+                            document
+                              .querySelector(".ReplayGame")
+                              .style.setProperty("display", "flex");
+                            document
+                              .querySelector(".ExitGame")
+                              .style.setProperty("display", "flex");
+                            setTimeout(function () {
+                              ReplayMusic.style.display = "none";
+                              cheer3.play();
+                              tripleboom();
+                              question.style.setProperty("display", "none");
+                              game.style.backgroundColor = "rgba(0, 0, 0, 0.7)";
+                              if (window.width <= 720) {
+                                score.style.width = 211 + "px";
+                              }
+                              score.style.left = "50%";
+                              score.style.right = "unset";
+                              score.style.setProperty(
+                                "transform",
+                                "translateX(-50%)"
+                              );
+                              score.style.top = "30%";
+                              score.style.fontSize = "clamp(3em,8vw,4em)";
+                              force = 0;
+                              voice = 0;
+                            }, 50);
+                          }, 300);
+                        }, 100);
+                      }, 1200);
+                    }, 400);
+                  }, 3000);
+                }, 600);
+              }, 1800);
+              break;
+            default:
+              break;
+          }
+        } else if (
+          element.textContent === "Back to ...., it's fall.." ||
+          "Back to ...., it's fall. " || // Question 1 jack1
+          "Getting ...., winter's here." ||
+          "Getting cooler, .... here. " || // Question 2 mia1
+          "nice to meet ...." ||
+          "nice to meet .... " || // Question 3 meet1
+          "nice to .... you." ||
+          "nice to .... you. " ||  // Question 7 meet2
+          "Back to school it's ....." ||
+          "Back to school it's ..... " ||   // Question 5 jack2
+          "Getting ...., winter's here." ||
+          "Getting ...., winter's here. " ||// Question 6 mia2
+          "nice to meet you ...." ||
+          "nice to meet you .... " || // Question 4 too1
+          "nice to meet .... too." ||
+          "nice to meet .... too. " || // Question 8 too2
+          "Back to school .... fall." ||
+          "Back to school .... fall. " || // Question 9 jack3
+          "Getting cooler, .... here." ||
+          "Getting cooler, .... here. "   // Question 10 mia3
+        ) { // jack 3 // sister 3 // meet 2 // too 2
+        }
+      }
+    });
+  });
+  observer.observe(element, { childList: !0 });
+});
+buttons.forEach((button) => {
+  button.addEventListener("click", (e) => {
+    e.preventDefault();
+    draggedButton = button;
+  });
+});
+buttons1.forEach(button => {
+  button.addEventListener('drag', (e) => {
+    // Store the button that is being dragged
+    draggedButton = button;
+  });
+});
+var dont1 = 1;
+var dont2 = 1;
+var dont3 = 1;
+var dont4 = 1;
+var dont5 = 1;
+var dont6 = 1;
+var dont7 = 1;
+var dont8 = 1;
+var dont9 = 1;
+var dont10 = 1;
+buttons.forEach((DropIn) => {
+  DropIn.addEventListener("click", (e) => {
+    e.preventDefault();
+    draggtemp = draggedButton;
+    if (
+      draggedButton &&
+      draggedButton.classList.contains("correct") &&
+      draggedButton.classList.contains("cc1") ||
+      draggedButton.classList.contains("cc5") ||
+      draggedButton.classList.contains("cc9")
+    ) {
+      Drop.style.setProperty("color", "rgb(73, 173, 42) !important");
+      Drop.textContent = "Back to school, it's fall.";
+    } else if (
+      draggedButton &&
+      draggedButton.classList.contains("correct") &&
+      draggedButton.classList.contains("cc2") ||
+      draggedButton.classList.contains("cc6") ||
+      draggedButton.classList.contains("cc10")
+    ) {
+      Drop.textContent = "Getting cooler, winter's here.";
+    } else if (
+      draggedButton &&
+      draggedButton.classList.contains("correct") &&
+      draggedButton.classList.contains("cc3") ||
+      draggedButton.classList.contains("cc7")
+    ) {
+      Drop.textContent = "Flowers are out, it's spring";
+    } else if (
+      draggedButton &&
+      draggedButton.classList.contains("correct") &&
+      draggedButton.classList.contains("cc4") ||
+      draggedButton.classList.contains("cc8")
+    ) {
+      Drop.style.setProperty("color", "rgb(73, 173, 42) !important");
+      Drop.textContent = "Summer's here june, july, august";
+    } else {
+      if (
+        draggtemp.classList.contains("wrong") &&
+        draggtemp.classList.contains("ww1")
+      ) {
+        force = 1;
+        scoreval--;
+        stopquiz(quiz);
+        switch (dont1) {
+          case 1:
+            Drop.textContent = "Back to ...., it's fall. ";
+            dont1++;
+            break;
+          case 2:
+            Drop.textContent = "Back to ...., it's fall.";
+            dont1++;
+            break;
+          default:
+            break;
+        }
+        score.innerHTML = `score : ${scoreval}`;
+        setTimeout(function () {
+          qon().pause();
+          qon().currentTime = 0;
+          r2.play();
+
+          setTimeout(function () {
+            Tryagain.play();
+          }, 800);
+
+          setTimeout(function () {
+            // Tryagain2.play();
+          }, 2000);
+
+
+          setTimeout(function () {
+            //  Tryagain.play();
+            qon().pause();
+            qon().currentTime = 0;
+            qon().play();
+          }, 5000);
+
+
+          setTimeout(function () {
+            qoo1.play();
+          }, 6500);
+
+
+        }, 100);
+      } else if (
+        draggtemp.classList.contains("wrong") &&
+        draggtemp.classList.contains("ww2")
+      ) {
+        force = 1;
+        scoreval--;
+        stopquiz(quiz);
+        switch (dont2) {
+          case 1:
+            Drop.textContent = "Getting cooler, .... here. ";
+            dont2++;
+            break;
+          case 2:
+            Drop.textContent = "Getting cooler, .... here.";
+            dont2 = 1;
+            break;
+          default:
+            break;
+        }
+        score.innerHTML = `score : ${scoreval}`;
+        setTimeout(function () {
+          qon().pause();
+          qon().currentTime = 0;
+          r3.play();
+
+          setTimeout(function () {
+            Tryagain.play();
+          }, 800);
+
+
+          setTimeout(function () {
+            // Tryagain2.play();
+          }, 2000);
+
+
+          setTimeout(function () {
+            //  Tryagain.play();
+            qon().pause();
+            qon().currentTime = 0;
+            qon().play();
+          }, 5000);
+
+
+          setTimeout(function () {
+            qoo2.play();
+          }, 6500);
+
+        }, 100);
+      } else if (
+        draggtemp.classList.contains("wrong") &&
+        draggtemp.classList.contains("ww3")
+      ) {
+        force = 1;
+        scoreval--;
+        stopquiz(quiz);
+        score.innerHTML = `score : ${scoreval}`;
+        switch (dont3) {
+          case 1:
+            Drop.textContent = "Flowers are out, it's ....";
+            dont3++;
+            break;
+          case 2:
+            Drop.textContent = "Flowers are out, it's ....";
+            dont3 = 1;
+            break;
+          default:
+            break;
+        }
+        setTimeout(function () {
+          qon().pause();
+          qon().currentTime = 0;
+          r5.play();
+
+          setTimeout(function () {
+            Tryagain.play();
+          }, 600);
+
+          setTimeout(function () {
+            // Tryagain2.play();
+          }, 2000);
+
+
+          setTimeout(function () {
+            //  Tryagain.play();
+            qon().pause();
+            qon().currentTime = 0;
+            qon().play();
+          }, 5000);
+
+
+          setTimeout(function () {
+            qoo3.play();
+          }, 6500);
+
+        }, 100);
+
+      } else if (
+        draggtemp.classList.contains("wrong") &&
+        draggtemp.classList.contains("ww4")
+      ) {
+        force = 1;
+        scoreval--;
+        stopquiz(quiz);
+        switch (dont4) {
+          case 1:
+            Drop.textContent = "Summer's here june, .... , august ";
+            dont4++;
+            break;
+          case 2:
+            Drop.textContent = "Summer's here june, .... , august";
+            dont4++;
+            break;
+          default:
+            break;
+        }
+        score.innerHTML = `score : ${scoreval}`;
+        setTimeout(function () {
+          qon().pause();
+          qon().currentTime = 0;
+
+          r7.play();
+          setTimeout(function () {
+            Tryagain.play();
+          }, 600);
+
+          setTimeout(function () {
+            // Tryagain2.play();
+          }, 2000);
+
+
+          setTimeout(function () {
+            //  Tryagain.play();
+            qon().pause();
+            qon().currentTime = 0;
+            qon().play();
+          }, 5000);
+
+
+          setTimeout(function () {
+            qoo4.play();
+          }, 7000);
+
+        }, 100);
+      } else if (
+        draggtemp.classList.contains("wrong") &&
+        draggtemp.classList.contains("ww5")
+      ) {
+        force = 1;
+        scoreval--;
+        stopquiz(quiz);
+        switch (dont5) {
+          case 1:
+            Drop.textContent = "Back to ...., it's fall";
+            dont5++;
+            break;
+          case 2:
+            Drop.textContent = "Back to ...., it's fall";
+            dont5 = 1;
+            break;
+          default:
+            break;
+        }
+        score.innerHTML = `score : ${scoreval}`;
+        setTimeout(function () {
+          qon().pause();
+          qon().currentTime = 0;
+
+          r9.play();
+          setTimeout(function () {
+            Tryagain.play();
+          }, 600);
+
+          setTimeout(function () {
+            // Tryagain2.play();
+          }, 2000);
+
+
+          setTimeout(function () {
+            //  Tryagain.play();
+            qon().pause();
+            qon().currentTime = 0;
+            qon().play();
+          }, 5000);
+
+
+          setTimeout(function () {
+            qoo1.play();
+          }, 7000);
+
+        }, 100);
+      } else if (
+        draggtemp.classList.contains("wrong") &&
+        draggtemp.classList.contains("ww6")
+      ) {
+        force = 1;
+        scoreval--;
+        stopquiz(quiz);
+        score.innerHTML = `score : ${scoreval}`;
+        switch (dont6) {
+          case 1:
+            Drop.textContent = "Getting cooler, .... here. ";
+            dont6++;
+            break;
+          case 2:
+            Drop.textContent = "Getting cooler, .... here.";
+            dont6 = 1;
+            break;
+          default:
+            break;
+        }
+        setTimeout(function () {
+          qon().pause();
+          qon().currentTime = 0;
+          Tryagain.play();
+          setTimeout(function () {
+            qon().pause();
+            qon().currentTime = 0;
+            qon().play();
+          }, 4000);
+        }, 100);
+      } else if (
+        draggtemp.classList.contains("wrong") &&
+        draggtemp.classList.contains("ww7")
+      ) {
+        force = 1;
+        scoreval--;
+        stopquiz(quiz);
+        score.innerHTML = `score : ${scoreval}`;
+        switch (dont7) {
+          case 1:
+            Drop.textContent = "nice to .... you. ";
+            dont7++;
+            break;
+          case 2:
+            Drop.textContent = "nice to .... you.";
+            dont7 = 1;
+            break;
+          default:
+            break;
+        }
+        setTimeout(function () {
+          qon().pause();
+          qon().currentTime = 0;
+          Tryagain.play();
+          setTimeout(function () {
+            qon().pause();
+            qon().currentTime = 0;
+            qon().play();
+          }, 4000);
+        }, 100);
+      } else if (
+        draggtemp.classList.contains("wrong") &&
+        draggtemp.classList.contains("ww8")
+      ) {
+        force = 1;
+        scoreval--;
+        stopquiz(quiz);
+        score.innerHTML = `score : ${scoreval}`;
+        switch (dont8) {
+          case 1:
+            Drop.textContent = "nice to meet .... too. ";
+            dont8++;
+            break;
+          case 2:
+            Drop.textContent = "nice to meet .... too.";
+            dont8 = 1;
+            break;
+          default:
+            break;
+        }
+        setTimeout(function () {
+          qon().pause();
+          qon().currentTime = 0;
+          Tryagain.play();
+          setTimeout(function () {
+            qon().pause();
+            qon().currentTime = 0;
+            qon().play();
+          }, 4000);
+        }, 100);
+      } else if (
+        draggtemp.classList.contains("wrong") &&
+        draggtemp.classList.contains("ww9")
+      ) {
+        force = 1;
+        scoreval--;
+        stopquiz(quiz);
+        score.innerHTML = `score : ${scoreval}`;
+        switch (dont9) {
+          case 1:
+            Drop.textContent = "Back to school, it's ..... ";
+            dont9++;
+            break;
+          case 2:
+            Drop.textContent = "Back to school, it's .....";
+            dont9 = 1;
+            break;
+          default:
+            break;
+        }
+        setTimeout(function () {
+          qon().pause();
+          qon().currentTime = 0;
+          Tryagain.play();
+          setTimeout(function () {
+            qon().pause();
+            qon().currentTime = 0;
+            qon().play();
+          }, 4000);
+        }, 100);
+      } else if (
+        draggtemp.classList.contains("wrong") &&
+        draggtemp.classList.contains("ww10")
+      ) {
+        force = 1;
+        scoreval--;
+        stopquiz(quiz);
+        score.innerHTML = `score : ${scoreval}`;
+        switch (dont10) {
+          case 1:
+            Drop.textContent = "Getting ...., winter's here. ";
+            dont10++;
+            break;
+          case 2:
+            Drop.textContent = "Getting ...., winter's here.";
+            dont10 = 1;
+            break;
+          default:
+            break;
+        }
+        setTimeout(function () {
+          qon().pause();
+          qon().currentTime = 0;
+          Tryagain.play();
+          setTimeout(function () {
+            qon().pause();
+            qon().currentTime = 0;
+            qon().play();
+          }, 4000);
+        }, 100);
+      }
+      draggtemp.style.backgroundColor = "rgb(104 104 104)";
+      draggtemp.style.border = "#2c2c2c";
+      draggtemp.style.setProperty(
+        "box-shadow",
+        "0 -2.0px 0px 1px #2c2c2c, " +
+        "0 -4.0px 0px 1px #2c2c2c, " +
+        "0 -6.0px 0px 1px #2c2c2c, " +
+        "0 -10.0px 0px 1px #2c2c2c"
+      );
+      draggedButton = null;
+    }
+  });
+});
+DropElement1.forEach((DropIn) => {
+  DropIn.addEventListener('dragover', (e) => {
+    e.preventDefault(); // Allow drop
+    draggtemp = draggedButton;
+  });
+  DropIn.addEventListener('drop', (e) => {
+    e.preventDefault();
+    draggtemp = draggedButton;
+    if (draggedButton && draggedButton.classList.contains('correct') && (
+      (draggedButton.classList.contains('cc1') &&
+        draggedButton.classList.contains('short')
+      ) && DropIn.classList.contains('CD1')
+    )) {
+      Drop.style.setProperty("color", "rgb(73, 173, 42) !important");
+      Drop.textContent = "Back to school, it's fall.";
+    }
+    //       ".... is my brother jack." ||
+    //       ".... is my brother jack. " || // Question 1 jack1
+    //       "this is my .... Mia." ||
+    //       "this is my .... Mia. " || // Question 2 mia1
+    //       "nice to meet ...." ||
+    //       "nice to meet .... " || // Question 3 meet1
+    //       "nice to meet you ...." ||
+    //       "nice to meet you .... " ||  // Question 4 meet2
+    //       "this is .... brother jack." ||
+    //       "this is .... brother jack. "||   // Question 5 jack2
+    //       "this ... my sister Mia."||   
+    //       "this ... my sister Mia. " ||// Question 6 mia2
+    //       "nice to .... you."||   
+    //       "nice to .... you. " || // Question 7 too1
+    //       "nice to meet .... too."||   
+    //       "nice to meet .... too. " || // Question 8 too2
+    //       "this is my .... jack."||   
+    //       "this is my .... jack. " || // Question 9 jack3
+    //       "this is .... sister Mia." || 
+    //       "this is .... sister Mia. "   // Question 10 mia3
+    else if (
+      draggedButton && draggedButton.classList.contains("correct") &&
+      (draggedButton.classList.contains("cc6") &&
+        draggedButton.classList.contains('Getting') &&
+        DropIn.classList.contains('CD1')) ||
+      (draggedButton.classList.contains("cc9") &&
+        draggedButton.classList.contains('this') &&
+        DropIn.classList.contains('CD1')) ||
+      (draggedButton.classList.contains("cc10") &&
+        draggedButton.classList.contains('this') &&
+        DropIn.classList.contains('CD1'))
+    ) {
+      draggedButton.style.display = "none";
+      DropIn.textContent = "Getting";
+      if (
+        Drop1[0].textContent == "Getting" &&
+        Drop1[1].textContent == "cooler," &&
+        Drop1[2].textContent == "winter's" &&
+        Drop1[3].textContent == "here"
+        // && 
+        // Drop1[4].textContent == "Mia" 
+      ) {
+        Drop.textContent = "Getting cooler, winter's here.";
+      }
+
+      else if (
+        Drop1[0].textContent == "this" &&
+        Drop1[1].textContent == "is" &&
+        Drop1[2].textContent == "my" &&
+        Drop1[3].textContent == "brother" &&
+        Drop1[4].textContent == "jack"
+      ) {
+        Drop.textContent = "Back to school, it's fall.";
+      }
+    }
+    else if (
+      draggedButton && draggedButton.classList.contains("correct") &&
+      (draggedButton.classList.contains("cc6") &&
+        draggedButton.classList.contains('cooler,') &&
+        DropIn.classList.contains('CD2')) ||
+      (draggedButton.classList.contains("cc9") &&
+        draggedButton.classList.contains('is') &&
+        DropIn.classList.contains('CD2')) ||
+      (draggedButton.classList.contains("cc10") &&
+        draggedButton.classList.contains('is') &&
+        DropIn.classList.contains('CD2'))
+    ) {
+      draggedButton.style.display = "none";
+      DropIn.textContent = "cooler,";
+      if (
+        Drop1[0].textContent == "Getting" &&
+        Drop1[1].textContent == "cooler," &&
+        Drop1[2].textContent == "winter's" &&
+        Drop1[3].textContent == "here"
+        // && 
+        // Drop1[4].textContent == "Mia" 
+      ) {
+        Drop.textContent = "Getting cooler, winter's here.";
+      } else if (
+        Drop1[0].textContent == "this" &&
+        Drop1[1].textContent == "is" &&
+        Drop1[2].textContent == "my" &&
+        Drop1[3].textContent == "brother" &&
+        Drop1[4].textContent == "jack"
+      ) {
+        Drop.textContent = "Back to school, it's fall.";
+      }
+    }
+    else if (
+      draggedButton && draggedButton.classList.contains("correct") &&
+      (draggedButton.classList.contains("cc6") &&
+        draggedButton.classList.contains('winter\'s') &&
+        DropIn.classList.contains('CD3')) ||
+      (draggedButton.classList.contains("cc9") &&
+        draggedButton.classList.contains('my') &&
+        DropIn.classList.contains('CD3')) ||
+      (draggedButton.classList.contains("cc10") &&
+        draggedButton.classList.contains('my') &&
+        DropIn.classList.contains('CD3'))
+    ) {
+      draggedButton.style.display = "none";
+      DropIn.textContent = "winter's";
+      if (
+        Drop1[0].textContent == "Getting" &&
+        Drop1[1].textContent == "cooler," &&
+        Drop1[2].textContent == "winter's" &&
+        Drop1[3].textContent == "here"
+        // && 
+        // Drop1[4].textContent == "Mia" 
+      ) {
+        Drop.textContent = "Getting cooler, winter's here.";
+      } else if (
+        Drop1[0].textContent == "this" &&
+        Drop1[1].textContent == "is" &&
+        Drop1[2].textContent == "my" &&
+        Drop1[3].textContent == "brother" &&
+        Drop1[4].textContent == "jack"
+      ) {
+        Drop.textContent = "Back to school, it's fall.";
+      }
+    }
+    else if (
+      draggedButton && draggedButton.classList.contains("correct") &&
+      (draggedButton.classList.contains("cc6") &&
+        draggedButton.classList.contains('here') &&
+        DropIn.classList.contains('CD4')) ||
+      (draggedButton.classList.contains("cc10") &&
+        draggedButton.classList.contains('sister') &&
+        DropIn.classList.contains('CD4'))
+    ) {
+      draggedButton.style.display = "none";
+      DropIn.textContent = "here";
+      if (
+        Drop1[0].textContent == "Getting" &&
+        Drop1[1].textContent == "cooler," &&
+        Drop1[2].textContent == "winter's" &&
+        Drop1[3].textContent == "here"
+        // && 
+        // Drop1[4].textContent == "Mia" 
+      ) {
+        Drop.textContent = "Getting cooler, winter's here.";
+      }
+    }
+    // else if (
+    //     draggedButton && draggedButton.classList.contains("correct") &&
+    //     (draggedButton.classList.contains("cc9") &&
+    //     draggedButton.classList.contains('brother') &&
+    //     DropIn.classList.contains('CD4'))
+    // ) {
+    //     draggedButton.style.display = "none";
+    //   DropIn.textContent = "brother";
+    //   if (
+    //     Drop1[0].textContent == "this" && 
+    //     Drop1[1].textContent == "is" && 
+    //     Drop1[2].textContent == "my" && 
+    //     Drop1[3].textContent == "brother" && 
+    //     Drop1[4].textContent == "jack" 
+    //   ) {
+    //     Drop.textContent = "Back to school, it's fall.";
+    //   }
+    // }
+    // else if (
+    //   draggedButton && draggedButton.classList.contains("correct") &&
+    //   (draggedButton.classList.contains("cc10") &&
+    //   draggedButton.classList.contains('mia') &&
+    //   DropIn.classList.contains('CD5')) 
+    // ) {
+    //   draggedButton.style.display = "none";
+    //   DropIn.textContent = "Mia";
+    //   if (
+    //     Drop1[0].textContent == "this" && 
+    //     Drop1[1].textContent == "is" && 
+    //     Drop1[2].textContent == "my" && 
+    //     Drop1[3].textContent == "sister"
+    //     //  && 
+    //     // Drop1[4].textContent == "Mia" 
+    //   ) {
+    //     Drop.textContent = "Getting cooler, winter's here.";
+    //   } 
+    // } 
+    else if (
+      draggedButton && draggedButton.classList.contains("correct") &&
+      (draggedButton.classList.contains("cc9") &&
+        draggedButton.classList.contains('jack') &&
+        DropIn.classList.contains('CD5'))
+    ) {
+      draggedButton.style.display = "none";
+      DropIn.textContent = "jack";
+
+      {
+        // عرض الرسالة الأولى أو الثانية بناءً على شرط معين
+        if (
+          Drop1[0].textContent == "this" &&
+          Drop1[1].textContent == "is" &&
+          Drop1[2].textContent == "my" &&
+          Drop1[3].textContent == "brother" &&
+          Drop1[4].textContent == "jack") {
+          Drop.textContent = "Back to school, it's fall.";
+        }
+        else {
+          Drop.textContent = "Back to school, it's fall2.";
+        }
+      }
+    }
+    else if (
+      draggedButton && draggedButton.classList.contains("correct") &&
+      draggedButton.classList.contains("cc7") &&
+      draggedButton.classList.contains('Flowers') &&
+      DropIn.classList.contains('CD1')
+    ) {
+      draggedButton.style.display = "none";
+      DropIn.textContent = "Flowers";
+      if (
+        Drop1[0].textContent == "Flowers" &&
+        Drop1[1].textContent == "are-out," &&
+        Drop1[2].textContent == "it's" &&
+        Drop1[3].textContent == "spring"
+      ) {
+        Drop.textContent = "Flowers are out, it's spring";
+      }
+    }
+    else if (
+      draggedButton && draggedButton.classList.contains("correct") &&
+      draggedButton.classList.contains("cc7") &&
+      draggedButton.classList.contains('are-out,') &&
+      DropIn.classList.contains('CD2')
+    ) {
+      draggedButton.style.display = "none";
+      DropIn.textContent = "are-out,";
+      if (
+        Drop1[0].textContent == "Flowers" &&
+        Drop1[1].textContent == "are-out,," &&
+        Drop1[2].textContent == "it's" &&
+        Drop1[3].textContent == "spring"
+      ) {
+        Drop.textContent = "Flowers are out, it's spring";
+      }
+    }
+    else if (
+      draggedButton && draggedButton.classList.contains("correct") &&
+      draggedButton.classList.contains("cc7") &&
+      draggedButton.classList.contains('it\'s') &&
+      DropIn.classList.contains('CD3')
+    ) {
+      draggedButton.style.display = "none";
+      DropIn.textContent = "it's";
+      if (
+        Drop1[0].textContent == "Flowers" &&
+        Drop1[1].textContent == "are-out," &&
+        Drop1[2].textContent == "it's" &&
+        Drop1[3].textContent == "spring"
+      ) {
+        Drop.textContent = "Flowers are out, it's spring";
+      }
+    }
+    else if (
+      draggedButton && draggedButton.classList.contains("correct") &&
+      draggedButton.classList.contains("cc7") &&
+      draggedButton.classList.contains('spring') &&
+      DropIn.classList.contains('CD4')
+    ) {
+      draggedButton.style.display = "none";
+      DropIn.textContent = "spring";
+      if (
+        Drop1[0].textContent == "Flowers" &&
+        Drop1[1].textContent == "are-out," &&
+        Drop1[2].textContent == "it's" &&
+        Drop1[3].textContent == "spring"
+      ) {
+        Drop.textContent = "Flowers are out, it's spring";
+      }
+    }
+    else if (
+      draggedButton && draggedButton.classList.contains("correct") &&
+      draggedButton.classList.contains("cc8") &&
+      draggedButton.classList.contains('Summer\'s') &&
+      DropIn.classList.contains('CD1')
+    ) {
+      draggedButton.style.display = "none";
+      DropIn.textContent = "Summer's";
+      if (
+        Drop1[0].textContent == "Summer's" &&
+        Drop1[1].textContent == "here" &&
+        Drop1[2].textContent == "june," &&
+        Drop1[3].textContent == "july," &&
+        Drop1[4].textContent == "august"
+      ) {
+        Drop.textContent = "Summer's here june, july, august";
+      }
+    }
+    else if (
+      draggedButton && draggedButton.classList.contains("correct") &&
+      draggedButton.classList.contains("cc8") &&
+      draggedButton.classList.contains('here') &&
+      DropIn.classList.contains('CD2')
+    ) {
+      draggedButton.style.display = "none";
+      DropIn.textContent = "here";
+      if (
+        Drop1[0].textContent == "Summer's" &&
+        Drop1[1].textContent == "here" &&
+        Drop1[2].textContent == "june," &&
+        Drop1[3].textContent == "july," &&
+        Drop1[4].textContent == "august"
+      ) {
+        Drop.textContent = "Summer's here june, july, august";
+      }
+    }
+    else if (
+      draggedButton && draggedButton.classList.contains("correct") &&
+      draggedButton.classList.contains("cc8") &&
+      draggedButton.classList.contains('june,') &&
+      DropIn.classList.contains('CD3')
+    ) {
+      draggedButton.style.display = "none";
+      DropIn.textContent = "june,";
+      if (
+        Drop1[0].textContent == "Summer's" &&
+        Drop1[1].textContent == "here" &&
+        Drop1[2].textContent == "june," &&
+        Drop1[3].textContent == "july," &&
+        Drop1[4].textContent == "august"
+      ) {
+        Drop.textContent = "Summer's here june, july, august";
+      }
+    }
+    else if (
+      draggedButton && draggedButton.classList.contains("correct") &&
+      draggedButton.classList.contains("cc8") &&
+      draggedButton.classList.contains('july,') &&
+      DropIn.classList.contains('CD4')
+    ) {
+      draggedButton.style.display = "none";
+      DropIn.textContent = "july,";
+      if (
+        Drop1[0].textContent == "Summer's" &&
+        Drop1[1].textContent == "here" &&
+        Drop1[2].textContent == "june," &&
+        Drop1[3].textContent == "july," &&
+        Drop1[4].textContent == "august"
+      ) {
+        Drop.textContent = "Summer's here june, july, august";
+      }
+    }
+    else if (
+      draggedButton && draggedButton.classList.contains("correct") &&
+      draggedButton.classList.contains("cc8") &&
+      draggedButton.classList.contains('august') &&
+      DropIn.classList.contains('CD5')
+    ) {
+      draggedButton.style.display = "none";
+      DropIn.textContent = "august";
+      if (
+        Drop1[0].textContent == "Summer's" &&
+        Drop1[1].textContent == "here" &&
+        Drop1[2].textContent == "june," &&
+        Drop1[3].textContent == "july," &&
+        Drop1[4].textContent == "august"
+      ) {
+        Drop.textContent = "Summer's here june, july, august";
+      }
+
+    } else {
+      if (
+        draggtemp.classList.contains("wrong") &&
+        draggtemp.classList.contains("ww1")
+      ) {
+        force = 1;
+        scoreval--;
+        stopquiz(quiz);
+        switch (dont1) {
+          case 1:
+            Drop.textContent = `${Req1} `;
+            dont1++;
+            break;
+          case 2:
+            Drop.textContent = `${Req1}`;
+            dont1++;
+            break;
+          default:
+            break;
+        }
+        score.innerHTML = `score : ${scoreval}`;
+        setTimeout(function () {
+          qon().pause();
+          qon().currentTime = 0;
+          r2.play();
+
+
+          setTimeout(function () {
+            Tryagain.play();
+          }, 800);
+
+          setTimeout(function () {
+            // Tryagain2.play();
+          }, 2000);
+
+
+          setTimeout(function () {
+            //  Tryagain.play();
+            qon().pause();
+            qon().currentTime = 0;
+            qon().play();
+          }, 5000);
+
+
+          setTimeout(function () {
+            qoo1.play();
+          }, 6500);
+
+
+        }, 100);
+
+      } else if (
+        draggtemp.classList.contains("wrong") &&
+        draggtemp.classList.contains("ww2")
+      ) {
+        force = 1;
+        scoreval--;
+        stopquiz(quiz);
+        switch (dont2) {
+          case 1:
+            Drop.textContent = "Getting cooler, .... here. ";
+            dont2++;
+            break;
+          case 2:
+            Drop.textContent = "Getting cooler, .... here.";
+            dont2 = 1;
+            break;
+          default:
+            break;
+        }
+        score.innerHTML = `score : ${scoreval}`;
+        setTimeout(function () {
+          qon().pause();
+          qon().currentTime = 0;
+          Tryagain.play();
+          setTimeout(function () {
+            qon().pause();
+            qon().currentTime = 0;
+            qon().play();
+          }, 4000);
+        }, 100);
+      } else if (
+        draggtemp.classList.contains("wrong") &&
+        draggtemp.classList.contains("ww3")
+      ) {
+        force = 1;
+        scoreval--;
+        stopquiz(quiz);
+        score.innerHTML = `score : ${scoreval}`;
+        switch (dont3) {
+          case 1:
+            Drop.textContent = "nice to meet .... ";
+            dont3++;
+            break;
+          case 2:
+            Drop.textContent = "nice to meet ....";
+            dont3 = 1;
+            break;
+          default:
+            break;
+        }
+        setTimeout(function () {
+          qon().pause();
+          qon().currentTime = 0;
+          Tryagain.play();
+          setTimeout(function () {
+            qon().pause();
+            qon().currentTime = 0;
+            qon().play();
+          }, 4000);
+        }, 100);
+      } else if (
+        draggtemp.classList.contains("wrong") &&
+        draggtemp.classList.contains("ww4")
+      ) {
+        force = 1;
+        scoreval--;
+        stopquiz(quiz);
+        switch (dont4) {
+          case 1:
+            Drop.textContent = "nice to .... you. ";
+            dont4++;
+            break;
+          case 2:
+            Drop.textContent = "nice to .... you.";
+            dont4++;
+            break;
+          default:
+            break;
+        }
+        score.innerHTML = `score : ${scoreval}`;
+        setTimeout(function () {
+          qon().pause();
+          qon().currentTime = 0;
+          Tryagain.play();
+          setTimeout(function () {
+            qon().pause();
+            qon().currentTime = 0;
+            qon().play();
+          }, 4000);
+        }, 100);
+      } else if (
+        draggtemp.classList.contains("wrong") &&
+        draggtemp.classList.contains("ww5")
+      ) {
+        force = 1;
+        scoreval--;
+        stopquiz(quiz);
+        switch (dont5) {
+          case 1:
+            Drop.textContent = "Back to school, it's ..... ";
+            dont5++;
+            break;
+          case 2:
+            Drop.textContent = "Back to school, it's .....";
+            dont5 = 1;
+            break;
+          default:
+            break;
+        }
+        score.innerHTML = `score : ${scoreval}`;
+        setTimeout(function () {
+          qon().pause();
+          qon().currentTime = 0;
+          r9.play();
+
+          setTimeout(function () {
+            Tryagain.play();
+          }, 600);
+          setTimeout(function () {
+            // Tryagain2.play();
+          }, 2000);
+
+
+          setTimeout(function () {
+            //  Tryagain.play();
+            qon().pause();
+            qon().currentTime = 0;
+            qon().play();
+          }, 5000);
+
+
+          setTimeout(function () {
+            qoo5.play();
+          }, 6500);
+
+        }, 100);
+      } else if (
+        draggtemp.classList.contains("wrong") &&
+        draggtemp.classList.contains("ww6")
+      ) {
+        force = 1;
+        scoreval--;
+        stopquiz(quiz);
+        score.innerHTML = `score : ${scoreval}`;
+        switch (dont6) {
+          case 1:
+            Drop.textContent = "Getting ...., winter's here. ";
+            dont6++;
+            break;
+          case 2:
+            Drop.textContent = "Getting ...., winter's here.";
+            dont6 = 1;
+            break;
+          default:
+            break;
+        }
+        setTimeout(function () {
+          qon().pause();
+          qon().currentTime = 0;
+          Tryagain.play();
+          setTimeout(function () {
+            qon().pause();
+            qon().currentTime = 0;
+            qon().play();
+          }, 4000);
+        }, 100);
+      } else if (
+        draggtemp.classList.contains("wrong") &&
+        draggtemp.classList.contains("ww7")
+      ) {
+        force = 1;
+        scoreval--;
+        stopquiz(quiz);
+        score.innerHTML = `score : ${scoreval}`;
+        switch (dont7) {
+          case 1:
+            Drop.textContent = "nice to meet you .... ";
+            dont7++;
+            break;
+          case 2:
+            Drop.textContent = "nice to meet you ....";
+            dont7 = 1;
+            break;
+          default:
+            break;
+        }
+        setTimeout(function () {
+          qon().pause();
+          qon().currentTime = 0;
+          Tryagain.play();
+          setTimeout(function () {
+            qon().pause();
+            qon().currentTime = 0;
+            qon().play();
+          }, 4000);
+        }, 100);
+      } else if (
+        draggtemp.classList.contains("wrong") &&
+        draggtemp.classList.contains("ww8")
+      ) {
+        force = 1;
+        scoreval--;
+        stopquiz(quiz);
+        score.innerHTML = `score : ${scoreval}`;
+        switch (dont8) {
+          case 1:
+            Drop.textContent = "nice to meet .... too. ";
+            dont8++;
+            break;
+          case 2:
+            Drop.textContent = "nice to meet .... too.";
+            dont8 = 1;
+            break;
+          default:
+            break;
+        }
+        setTimeout(function () {
+          qon().pause();
+          qon().currentTime = 0;
+          Tryagain.play();
+          setTimeout(function () {
+            qon().pause();
+            qon().currentTime = 0;
+            qon().play();
+          }, 4000);
+        }, 100);
+      } else if (
+        draggtemp.classList.contains("wrong") &&
+        draggtemp.classList.contains("ww9")
+      ) {
+        force = 1;
+        scoreval--;
+        stopquiz(quiz);
+        score.innerHTML = `score : ${scoreval}`;
+        switch (dont9) {
+          case 1:
+            Drop.textContent = "Back to school, .... fall. ";
+            dont9++;
+            break;
+          case 2:
+            Drop.textContent = "Back to school, .... fall.";
+            dont9 = 1;
+            break;
+          default:
+            break;
+        }
+        setTimeout(function () {
+          qon().pause();
+          qon().currentTime = 0;
+          Tryagain.play();
+          setTimeout(function () {
+            qon().pause();
+            qon().currentTime = 0;
+            qon().play();
+          }, 4000);
+        }, 100);
+      } else if (
+        draggtemp.classList.contains("wrong") &&
+        draggtemp.classList.contains("ww10")
+      ) {
+        force = 1;
+        scoreval--;
+        stopquiz(quiz);
+        score.innerHTML = `score : ${scoreval}`;
+        switch (dont10) {
+          case 1:
+            Drop.textContent = "Getting cooler, .... here. ";
+            dont10++;
+            break;
+          case 2:
+            Drop.textContent = "Getting cooler, .... here.";
+            dont10 = 1;
+            break;
+          default:
+            break;
+        }
+        setTimeout(function () {
+          qon().pause();
+          qon().currentTime = 0;
+          Tryagain.play();
+          setTimeout(function () {
+            qon().pause();
+            qon().currentTime = 0;
+            qon().play();
+          }, 4000);
+        }, 100);
+      }
+
+      draggedButton = null;
+    }
+  });
+});
+
+
+    </script>
+   <script>
+    function playButtonSound(button) {
+    var soundFile = button.getAttribute("data-sound");
+    var audioPlayer = document.getElementById("audio-player");
+    audioPlayer.src = soundFile;
+    audioPlayer.play();
+}
+   </script>
+
+
+<script>
+ function startDrag(event) {
+        // نقوم بتحديد العنصر الكامل (الزر) للسحب
+        const button = event.target;
+        // نستخدم outerHTML لسحب الزر كاملاً مع النص
+        event.dataTransfer.setData("text/html", button.outerHTML);
+    }
+</script>
+<script>
+  function startDrag(event, button) {
+      // عندما يبدأ السحب نقوم بإنشاء نسخة من الزر
+      const copyButton = button.cloneNode(true); // نسخ الزر بالكامل
+      copyButton.style.position = 'absolute';
+      copyButton.style.pointerEvents = 'none'; // تأكد من أن النسخة لا تتداخل مع السحب
+      document.body.appendChild(copyButton); // إضافة النسخة إلى الصفحة
+
+      // إعداد لتتبع حركة الفأرة
+      document.onmousemove = function(e) {
+          copyButton.style.left = e.pageX - copyButton.offsetWidth / 2 + 'px'; // تحريك الزر مع الفأرة
+          copyButton.style.top = e.pageY - copyButton.offsetHeight / 2 + 'px'; // تحريك الزر مع الفأرة
+      };
+
+      // إزالة النسخة عند الإفلات
+      document.onmouseup = function() {
+          document.onmousemove = null;
+          document.onmouseup = null;
+          copyButton.remove(); // إزالة النسخة عند الإفلات
+      };
+
+      // منع السلوك الافتراضي للسحب
+      event.preventDefault();
+  }
+</script>
+
+<style>
+  /* إضافة بعض الأنماط لتحديد شكل الأزرار */
+  .button-6 {
+      background-color: #f39c12;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+  }
+
+  .button-6 .text {
+      font-size: 16px;
+      color: white;
+  }
+</style>
+<!-- <div class="quest6">
+  <div class="images img2">
+      <img src="./Images/cat.png" alt="">
+  </div>
+  <button class="button-6 btn6 wrong ww6 correct cc6 Getting" role="button" onclick="playButtonSound(this)" onmousedown="startDrag(event, this)">
+      <span class="text">Getting</span>
+  </button>
+  <button class="button-6 btn6 wrong ww6 correct cc6 here" role="button" onclick="playButtonSound(this)" onmousedown="startDrag(event, this)">
+      <span class="text">Here</span>
+  </button>
+  <button class="button-6 btn6 wrong ww6 correct cc6 cooler," role="button" onclick="playButtonSound(this)" onmousedown="startDrag(event, this)">
+      <span class="text">Cooler,</span>
+  </button>
+  <button class="button-6 btn6 wrong ww6 correct cc6 winter's" role="button" onclick="playButtonSound(this)" onmousedown="startDrag(event, this)">
+      <span class="text">Winter's</span>
+  </button>
+</div> -->
+
+<!-- <div class="qo Qo2">
+  <div class="DropIn1 CD CD6" ondrop="drop(event)" ondragover="allowDrop(event)">
+       سيتم إضافة النص هنا -->
+  <!-- </div>
+</div>
+<div class="qo Qo2">
+  <div class="DropIn1 CD CD7" ondrop="drop(event)" ondragover="allowDrop(event)">
+   </div>
+</div>
+<div class="qo Qo2">
+  <div class="DropIn1 CD CD8" ondrop="drop(event)" ondragover="allowDrop(event)">
+       سيتم إضافة النص هنا -->
+  <!-- </div>
+</div> --> 
+
+
+<script>
+  function startDrag(event, button) {
+      // عندما يبدأ السحب، نقوم بتحديد النص داخل الزر
+      event.dataTransfer.setData("text", button.querySelector('.text').textContent);
+      event.dataTransfer.setData("button", button.outerHTML); // لتخزين الزر بالكامل إذا أردت
+     
+      const soundPath = button.getAttribute("data-sound");
+      const sound2 = new Audio(soundPath);
+      sound2.play();
+
+    }
+
+  function allowDrop(event) {
+      // منع السلوك الافتراضي للتفاعل مع الـ drop
+      event.preventDefault();
+  }
+
+  function drop(event) {
+      event.preventDefault();
+      // جلب النص من البيانات المنقولة
+      const text = event.dataTransfer.getData("text");
+
+      // تحديد المكان الذي يتم الإفلات فيه
+      const dropZone = event.target;
+      
+      // إضافة النص إلى المكان المحدد
+      if (dropZone.classList.contains('DropIn1')) {
+          dropZone.innerHTML = `<span class="text">${text}</span>`;
+      }
+  }
+</script>
+
+<style>
+  /* إضافة بعض الأنماط لتحديد شكل الأزرار */
+  .button-6 {
+      /* background-color: #f39c12; */
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+  }
+
+  .button-6 .text {
+      font-size: 16px;
+      color: white;
+  }
+
+  .DropIn1 {
+      /* border: 2px dashed #f39c12; */
+      padding: 20px;
+      min-height: 50px;
+      margin: 10px 0;
+      text-align: center;
+  }
+
+  .DropIn1 span {
+      font-size: 16px;
+      color: #333;
+  }
+</style>
+
+</body>
+
+</html>
