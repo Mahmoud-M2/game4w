@@ -990,8 +990,14 @@ function firstquest() {
         Drop.style.setProperty("display", "flex");
         Quest1.style.setProperty("top", "47%");
       }, 900);
+      setTimeout(() => {
+        qoo1.play()
+      }, 3000);
+      setTimeout(() => {
+        qoo1.play()
+      }, 1000);
     }, 6400);
-    sayquestion(qoo1, 7600, 1800);
+    // sayquestion(qoo1, 7600, 1800);
   }, 200);
 }
 var voice = 0;
@@ -1722,7 +1728,13 @@ DropElement.forEach((element, index) => {
                       );
                       force = 0;
                       voice = 0;
-                      sayquestion(qoo4, 3000, 3000);
+                      setTimeout(function () {
+                        qoo4.play()
+                      }, 3000)
+                      setTimeout(function () {
+                        qo4.play()
+                      }, 6000)
+                      // sayquestion(qoo4, 3000, 3000);
                       setTimeout(function () {
                         Quest4.style.setProperty("top", "47%");
                         mainqo.style.setProperty("display", "block");
@@ -1865,7 +1877,10 @@ DropElement.forEach((element, index) => {
                       );
                       force = 0;
                       voice = 0;
-                      sayquestion(qoo1, 3000, 3000);
+                      setTimeout(function () {
+                      qoo1.play()
+                      }, 3000)
+                      sayquestion(qoo1, 3000);
                       setTimeout(function () {
                         Quest5.style.setProperty("top", "47%");
                         mainqo.style.setProperty("display", "block");
